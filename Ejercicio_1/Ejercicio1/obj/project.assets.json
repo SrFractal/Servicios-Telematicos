@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\Desktop\\Servicios-Telem-ticos\\netcore\\holamundo\\holamundo.csproj",
-      "projectName": "holamundo",
-      "projectPath": "C:\\Users\\user\\Desktop\\Servicios-Telem-ticos\\netcore\\holamundo\\holamundo.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Desktop\\Servicios-Telem-ticos\\Ejercicio_1\\Ejercicio1\\Ejercicio1.csproj",
+      "projectName": "Ejercicio1",
+      "projectPath": "C:\\Users\\user\\Desktop\\Servicios-Telem-ticos\\Ejercicio_1\\Ejercicio1\\Ejercicio1.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\Desktop\\Servicios-Telem-ticos\\netcore\\holamundo\\obj\\",
+      "outputPath": "C:\\Users\\user\\Desktop\\Servicios-Telem-ticos\\Ejercicio_1\\Ejercicio1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"

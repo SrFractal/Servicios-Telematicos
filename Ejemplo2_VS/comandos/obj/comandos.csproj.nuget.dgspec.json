@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\Desktop\\Servicios-Telem-ticos\\netcore\\holamundo\\holamundo.csproj": {}
+    "C:\\Users\\user\\Desktop\\Servicios-Telem-ticos\\Ejemplo2_VS\\comandos\\comandos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\Desktop\\Servicios-Telem-ticos\\netcore\\holamundo\\holamundo.csproj": {
+    "C:\\Users\\user\\Desktop\\Servicios-Telem-ticos\\Ejemplo2_VS\\comandos\\comandos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Desktop\\Servicios-Telem-ticos\\netcore\\holamundo\\holamundo.csproj",
-        "projectName": "holamundo",
-        "projectPath": "C:\\Users\\user\\Desktop\\Servicios-Telem-ticos\\netcore\\holamundo\\holamundo.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Desktop\\Servicios-Telem-ticos\\Ejemplo2_VS\\comandos\\comandos.csproj",
+        "projectName": "comandos",
+        "projectPath": "C:\\Users\\user\\Desktop\\Servicios-Telem-ticos\\Ejemplo2_VS\\comandos\\comandos.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Desktop\\Servicios-Telem-ticos\\netcore\\holamundo\\obj\\",
+        "outputPath": "C:\\Users\\user\\Desktop\\Servicios-Telem-ticos\\Ejemplo2_VS\\comandos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
