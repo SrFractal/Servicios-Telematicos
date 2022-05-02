@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <style>
+
+        a{
+            text-decoration:none;
+        }
+        button{
+            display: block;
+            width: 100%;
+            padding: 5%;
+            margin:5%;
+            background-color: rgb(255, 174, 0);
+        }
+        .main{
+            background-color: rgb(207, 207, 207);
+            text-align: center;
+            width: auto;
+            margin-left:auto;
+            margin-right: auto;
+        }
+        .lista{
+            background-color: rgb(207, 207, 207);
+            text-align: left;
+            width: auto;
+            margin-left:auto;
+            margin-right: auto;
+            display: inline-block; 
+        }
+    
+        .column1 {
+        float: left;
+        width: 10%;
+        }
+        .column2 {
+        float: left;
+        width: 90%;
+        }
+        .column3 {
+        float: left;
+        width: 30%;
+        margin:1.1111%;
+        }
+        .paper{
+            float:left;
+            width:2.5%;
+            margin:2.5%;
+            background-color: rgb(255, 255, 255);
+            text-decoration:none;
+        }
+    
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    </style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú</title>
+
+    <div class="main">
+        <div>
+            <hr>
+            <h1>MENÚ</h1>
+            <hr>
+        </div>
+    </div>
+</head>
+<body>
+    <div class="main">
+        <hr>
+        <div class="row"><h3>Añadir nueva entrada:</h3> </div><hr>
+        <div class="row">
+            <h3>Leer información:</h3>
+            <form method="post" action="/">
+            <script>
+                var test = '<%- A %>';
+                for(var i=1;i<test;i++){
+                document.write('<div class="paper"><input type="submit" value="'+i+'" name="Var"></input></div>');}
+            </script>
+            </form>
+        </div><hr>
+        <div class="row">
+            <h3>Mostrar inventario:</h3>
+            <div class="column3"><button onclick="location.href='/Inventario'" ><h3>Completo...</h3></button></div>
+            <div class="column3"><button onclick="location.href='/Par'"><h3>Par...</h3></button></div>
+            <div class="column3"><button onclick="location.href='/Impar'"><h3>Impar...</h3></button></div>
+        </div><hr>
+    </div>
+</div>
+
+</body>
+</html>

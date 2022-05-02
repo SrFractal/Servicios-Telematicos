@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+    a{
+        text-decoration:none;
+    }
+    .main{
+        background-color: rgb(207, 207, 207);
+        text-align: center;
+        width: auto;
+        margin-left:auto;
+        margin-right: auto;
+    }
+    .lista{
+        background-color: rgb(207, 207, 207);
+        text-align: left;
+        width: auto;
+        margin-left:auto;
+        margin-right: auto;
+        display: inline-block; 
+    }
+
+    .column1 {
+    float: left;
+    width: 10%;
+    }
+    .column2 {
+    float: left;
+    width: 80%;
+    }
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario</title>
+    
+
+
+    <div class="main">
+        <div class="row">
+            <div class="column1"><h1><a href="/">🏠</a></h1></div>
+            
+            <div class="column2"><hr><h1>INVENTARIO</h1><hr></div>
+
+            <div class="column1"><h1><a onclick="document.location.reload(true)">🔃</a></h1></div>
+        </div>
+    </div>
+
+</head>
+<body>
+
+<div class="main">
+    <hr>
+    <div class="lista">
+        <h2 style="white-space: pre-line"> <%- Inventario -%> <h2>
+    </div>
+    <hr>
+</div>
+
+
+</body>
+</html>
