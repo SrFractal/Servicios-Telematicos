@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+    a{
+        text-decoration:none;
+    }
+    .main{
+        background-color: rgb(207, 207, 207);
+        text-align: center;
+        width: auto;
+        margin-left:auto;
+        margin-right: auto;
+    }
+    .lista{
+        background-color: rgb(207, 207, 207);
+        text-align: left;
+        width: auto;
+        margin-left:auto;
+        margin-right: auto;
+        display: inline-block; 
+    }
+    button{
+            display: block;
+            width: 100%;
+            padding: 5%;
+            margin:5%;
+            background-color: rgb(255, 174, 0);
+    }
+
+    .column1 {
+    float: left;
+    width: 10%;
+    }
+    .column2 {
+    float: left;
+    width: 80%;
+    }
+    .column3 {
+    float: left;
+    width: 42.5%;
+    margin: 2.5%;
+    }
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario</title>
+    
+
+
+    <div class="main">
+        <div class="row">
+            <div class="column1"><h1><a href="/">🏠</a></h1></div>
+            
+            <div class="column2"><hr><h1>INVENTARIO</h1><hr></div>
+
+            <div class="column1"><h1><a onclick="document.location.reload(true)">🔃</a></h1></div>
+        </div>
+    </div>
+
+
+</head>
+<body>
+
+<div class="main">
+    <hr>
+    <div class="lista">
+        <h2 style="white-space: pre-line"> <%- Inventario -%> <h2>
+    </div>
+    <hr>
+</div>
+<div class="main">
+    <hr>
+    <div class="row">
+        <div class="column3"><button onclick="location.href='/Inventario/Ascendente'"><h3>Ascendente</h3></button></div>
+        <div class="column3"><button onclick="location.href='/Inventario/Descendente'"><h3>Descendente</h3></button></div>
+    </div>
+    <hr>
+</div>
+
+</body>
+</html>

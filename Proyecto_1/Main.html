@@ -13,6 +13,26 @@
             margin:5%;
             background-color: rgb(255, 174, 0);
         }
+        input{
+            background-color: rgb(255, 174, 0);
+            color:black;
+            padding: 10px;
+            margin: auto;
+        }
+        .entrada{
+            background-color: rgb(255, 255, 255);
+            color:black;
+            text-align: left;
+            width: 100%;
+            margin: 5%;
+        }
+        .descripcion{
+            background-color: rgb(255, 255, 255);
+            color:black;
+            text-align: left;
+            width: 100%;
+            margin: 5%;
+        }
         .main{
             background-color: rgb(207, 207, 207);
             text-align: center;
@@ -31,11 +51,13 @@
     
         .column1 {
         float: left;
-        width: 10%;
+        width: 22.5%;
+        margin: 5%;
         }
         .column2 {
         float: left;
-        width: 90%;
+        width: 60%;
+        margin-right: 5%;
         }
         .column3 {
         float: left;
@@ -46,7 +68,7 @@
             float:left;
             width:2.5%;
             margin:2.5%;
-            background-color: rgb(255, 255, 255);
+            background-color: rgb(207, 207, 207);
             text-decoration:none;
         }
     
@@ -54,6 +76,11 @@
       content: "";
       display: table;
       clear: both;
+    }
+    label{
+        text-align: left;
+        display: inline-block; 
+        width: auto;
     }
     </style>
 
@@ -74,7 +101,17 @@
 <body>
     <div class="main">
         <hr>
-        <div class="row"><h3>Añadir nueva entrada:</h3> </div><hr>
+        <div class="row"><h3>Añadir nueva entrada:</h3>
+        <form method="post" action="/Nuevo">
+            <div class="column2">
+            <input class="entrada" type="text" placeholder="Nueva entrada"  id="Nueva" name="Nueva" required></input>
+            <input class="descripcion" type="text" placeholder="Descripción" id="Info" name="Info" required></input>
+            </div>
+            <div class="column1">
+            <button type="submit" ><h3>Enviar</h3></button>
+            </div>
+        </form>
+        </div><hr>
         <div class="row">
             <h3>Leer información:</h3>
             <form method="post" action="/">
