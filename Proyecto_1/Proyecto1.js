@@ -48,12 +48,16 @@ app.get('/Inventario', (req,res) => {
 
 app.get('/Inventario/Ascendente', (req,res) => {
     Listar();
+    console.clear();
+    console.log(Datos);
     res.render('Inventario_Sort.html',{Inventario:Datos});
     Datos=""; Par=""; Impar=""; A=1; Datos2="";
 });
 
 app.get('/Inventario/Descendente', (req,res) => {
     Listar();
+    console.clear();
+    console.log(Datos2);
     res.render('Inventario_Sort.html',{Inventario:Datos2});
     Datos=""; Par=""; Impar=""; A=1; Datos2="";
 });
