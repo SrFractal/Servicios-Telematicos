@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Styles.css">
+    <title>Cambio de Imagenes.</title>
+</head>
+<body>
+    <div class="row">
+
+        <div class="column1">
+            <div class="lista"> 
+                <hr>
+                <button onclick="Imagen0()">Inicio</button> 
+                <hr>
+                <button onclick="Imagen1()">Imagen 1</button> 
+                <hr>
+                <button onclick="Imagen2()">Imagen 2</button> 
+                <hr>
+                <button onclick="Imagen3()">Imagen 3</button> 
+                <hr>
+            </div>
+        </div>
+        <div class="division"> </div>
+        <div class="column2">
+            <div class="main">
+                <hr>
+                <img id="Imagen" name="Imagen" src="assets/images/0.jpg" alt="No hay nada"/>
+                <hr>    
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function Imagen0(){document.getElementById("Imagen").src="assets/images/0.jpg";}
+    function Imagen1(){document.getElementById("Imagen").src="assets/images/1.jpg";}
+    function Imagen2(){document.getElementById("Imagen").src="assets/images/2.png";}
+    function Imagen3(){document.getElementById("Imagen").src="assets/images/3.jpg";}
+</script>
+</html>
