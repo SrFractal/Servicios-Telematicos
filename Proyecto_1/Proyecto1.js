@@ -62,6 +62,8 @@ app.get('/Inventario/Descendente', (req,res) => {
     Datos=""; Par=""; Impar=""; A=1; Datos2="";
 });
 
+
+
 app.get('/Par', (req,res) => {
     Listar();
     res.render('Inventario.html',{Inventario:Par});
