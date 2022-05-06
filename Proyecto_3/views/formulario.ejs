@@ -1,0 +1,39 @@
+<%- include("template/header", {tituloWeb:'Pagina Web'}) %>
+
+<body>
+  
+
+<%- include("template/sidebar")%>
+
+      <div class="main2">
+        <hr>
+        <div style="background-color: rgb(255, 75, 75); color: white; text-align: center;">
+            <hr style="border: 3px solid rgb(255, 255, 255);">
+            <h4>Añadir un nuevo producto</h4>
+            <hr style="border: 3px solid rgb(255, 255, 255);">
+        </div>
+        <hr>
+
+
+        <form method="post" action="/nuevo_producto" enctype="multipart/form-data" style="width: 100%;">
+            <h6 style="text-align: center;">Nombre del producto:</h6><hr>
+            <input type="text" name="nombre" style="width: 100%;" placeholder="Nombre del producto..." required><hr>
+            <h6 style="text-align: center;">Precio:</h6><hr>
+            <input type="text" name="mensaje" style="width:100%" placeholder="9.999" required><hr>
+            <h6 style="text-align: center;">Imágen del producto:</h6><hr>
+            <input type="file" name="archivo" style="width: 68%; float: left; margin:1%;" accept="image/png, image/gif, image/jpeg" required></input>
+            <button class="boton" type="submit">Enviar</button>
+            <hr>
+        </form >
+<br>
+<br>
+    
+
+   
+</div>
+</div>
+</body>
+
+
+
+</html>

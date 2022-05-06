@@ -1,0 +1,68 @@
+<%- include("template/header", {tituloWeb:'Pagina Web'}) %>
+
+<body>
+  
+
+<%- include("template/sidebar")%>
+
+<div class="main2">
+<form action="/inventario" method="post" id="Enviar">
+
+<table style="width: 100%; text-align: center;">
+<tr>
+    <th style="width: 65%; text-align: center;">
+        <hr>Nombre del producto <hr>
+    </th>
+    <th style="width: 15%; text-align: center;">
+        <hr>Precio<hr>
+    </th>
+    <th style="width: 15%; text-align: center;">
+        <hr>Unidades<hr>
+    </th>
+</tr>
+    <script type="text/javascript">
+         var AA="";
+         var BB="";
+         var CC="";
+         var Producto = '<%- Producto -%>' 
+         Producto= Producto.split(",");
+         var precio = '<%- Precio -%>' 
+         precio= precio.split(",");
+         var Q = '<%- Cantidad -%>' 
+         Q= Q.split(",");
+         var test = '<%- A -%>';
+         for(var i=1;i<test;i++){
+                document.write('<tr>');
+                document.write('<td><input type="text" id="A'+i+'" class="inventario" value="'+Producto[i]+'" ></td>');
+                document.write('<td><input type="text" id="B'+i+'" class="inventario" value="'+precio[i]+'" ></td>');
+                document.write('<td><input type="number" id="C'+i+'" min="0"  class="inventario" value="'+Q[i]+'"></td>');
+                document.write('</tr>');
+            }
+            function Enviar() {
+                for(var i=1;i<test;i++){
+                    AA=AA+','+document.getElementById("A"+i).value;
+                    BB=BB+','+document.getElementById("B"+i).value;
+                    CC=CC+','+document.getElementById("C"+i).value;
+                }
+                document.getElementById("Inventario").value = AA;
+                document.getElementById("Precio").value = BB;
+                document.getElementById("Unidades").value = CC;
+                document.getElementById("Enviar").submit();
+            }
+            
+    </script>
+    <input type="hidden" name="Inventario" id="Inventario" value="1">
+    <input type="hidden" name="Precio" id="Precio" value="1">
+    <input type="hidden" name="Unidades" id="Unidades" value="1">
+</form>
+</table>
+
+<div class="main2" style="text-align: center; cursor:pointer;background-color: rgb(255, 75, 75); border:5px solid rgb(129, 129, 129); color: white; padding: 2%;" onclick="Enviar()">Enviar</div>
+</div>
+    
+    
+      
+
+</body>
+
+</html>

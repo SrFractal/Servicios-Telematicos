@@ -1,0 +1,68 @@
+<%- include("template/header", {tituloWeb:'Pagina Web'}) %>
+
+<body>
+  
+
+<%- include("template/sidebar")%>
+
+<div class="main">
+
+<form action="/catalogo" method="post" id="Enviar">
+    <input type="text" hidden value="0" id="var" name="var">
+    <script>
+        document.getElementById("var").value ="0";
+         var Producto = '<%- Producto -%>' 
+         Producto= Producto.split(",");
+         var precio = '<%- Precio -%>' 
+         precio= precio.split(",");
+         var imagen = '<%- Imagen -%>' 
+         imagen= imagen.split(",");
+         var Q = '<%- Cantidad -%>' 
+         Q= Q.split(",");
+         var test = '<%- A -%>';
+         for(var i=1;i<test;i++){
+
+            if(Q[i]>0){
+            document.write('<div class="caja"><div class="overlay" onclick="Enviar('+i+')"><div class="text">Comprar.</div></div><div class="imagen"><img class="img" src="/img/'+imagen[i]+'" alt="'+i+'"></div>');
+            document.write('<div class="producto"><h6>'+Producto[i]+' |  $'+precio[i]+'</h6></div><div class="unidades"><small>Quedan '+Q[i]+' unidades</small></div></div>');}
+         
+            if(Q[i]<=0){
+            document.write('<div class="caja"><div class="overlay2" onclick=""><div class="text">Agotado...</div></div><div class="imagen"><img class="img" src="/img/'+imagen[i]+'" alt="'+i+'"></div>');
+            document.write('<div class="producto"><h6>'+Producto[i]+' |  $'+precio[i]+'</h6></div><div class="unidades"><small>Quedan '+Q[i]+' unidades</small></div></div>');}
+        }
+        function Enviar(A) {
+        document.getElementById("var").value = A;
+        document.getElementById("Enviar").submit();
+        }
+    </script>
+</form>
+
+<div class="caja">
+    <div class="overlay3" onclick="location.href='/nuevo_producto'"><div class="text">➕</div></div>
+    <div class="imagen"><img class="img" src="/img/producto.png" alt="Añadir producto..."></div>
+    <div class="producto"><h6>Añadir un nuevo producto</h6></div>
+</div>
+
+</div>
+    
+    
+      
+        <!--script>
+            var archivo = '<%- Imagen -%>' 
+            document.write('<img src="/img/'+archivo+'" alt="Producto" style="border: 2px solid black;">');
+        </script-->
+       
+       
+       
+
+
+
+</body>
+
+
+    
+
+
+
+
+</html>
