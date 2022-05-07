@@ -1,0 +1,36 @@
+<%- include("template/header", {tituloWeb:'Pagina Web'}) %>
+
+<body>
+  
+
+    <%- include("template/sidebar")%>
+    <div style="position: absolute; width: 67%; height: 100%;top: 0%;right: 3%;">
+      
+       <hr>
+       
+           <div style="width: 100%; text-align: center;"><h1><%- nombre -%> </h1></div>
+        
+    
+    <hr>
+       <div class="column1">
+        <script>
+            var archivo = '<%- Imagen -%>' 
+            document.write('<img src="/img/'+archivo+'" alt="Producto" style="border: 2px solid black;">');
+        </script>
+       </div>
+
+        
+        <h2 style="text-align: justify;">
+            <%- descripcion -%>
+        </h2>
+        <hr>
+
+    </div>
+    
+</body>
+
+<div style="position: fixed; width: 3%; height: 100%;top: 0%;right: 0"></div>
+    
+
+
+</html>

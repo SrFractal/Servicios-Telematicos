@@ -1,0 +1,76 @@
+
+<style>
+button{
+  background-color: rgba(255, 255, 255, 0);
+  color: white;
+  border-color: rgba(255, 255, 255, 0);
+  width: 100%;
+  text-align: left;
+  font-size: larger;
+  font-family: 'Times New Roman', Times, serif;
+  display: block;
+  word-wrap: break-word;
+  }
+  .centrar:hover{
+    background: rgb(33, 78, 161);
+  }
+  a{text-decoration: none;}
+  .boton{ 
+    background-color: rgb(255, 75, 75);
+    color: rgb(255, 255, 255);
+    width: 30%;
+    text-align: center;
+    border: 3px solid black;
+  }
+  h3{font-family: 'Times New Roman', Times, serif;}
+  u1{color: white; }
+ img{
+    width: 95%;
+    height: 100%;
+    border-radius: 5%;
+ }
+
+.column1 {
+    float: left;
+    width: 40%;
+    height: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+</style>
+<div  class="p-3 text-white bg-dark" style="position: fixed; width: 27%; min-height: 100%;top: 0%;left: 0"></div>
+<div  class="p-3 text-white bg-dark" style="position: absolute; width: 27%; min-height: 100%;top: 0%;left: 0">
+      <hr>
+      <h3>📚 Catálogo</h3>
+      <hr>
+      <form method="post" action="/">
+        <script>
+          var B = '<%- Producto -%>' 
+          B= B.split(",");
+          var test = '<%- A -%>';
+          for(var i=1;i<test;i++){
+          document.write('<div class="centrar"><button type="submit" value="'+i+'"  name="valor">🔹 '+B[i]+'</button></div>');}
+        </script>
+        <hr>
+      </form>
+      <div class="centrar"><button onclick="window.location.href='/nuevo_producto'" name="valor">📌 Añadir producto...</button></div>
+      <hr>
+      <div><a href="http://tecelectronica.udistrital.edu.co"><img src="/img/UD.png" alt="Universidad distrital fransisco josé de caldas" style="max-width: 100%;"></a></div> <hr>
+
+
+      <div style="text-align: center;">
+        <small>Omar Andrés Díaz Peláez & Juan Diego Benavidez Castellanos</small> 
+    </div>
+    
+</div>
+<script>
+  if ( window.history.replaceState ) {
+    window.history.replaceState( null, null, window.location.href );
+  }
+  </script>
+
+ 
+
+

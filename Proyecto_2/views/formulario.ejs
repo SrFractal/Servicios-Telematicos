@@ -1,0 +1,43 @@
+<%- include("template/header", {tituloWeb:'Pagina Web'}) %>
+
+<body>
+  
+
+     <%- include("template/sidebar")%>
+     <div style="position: absolute; width: 67%; height: 100%;top: 0%;right: 3%;text-align: center;">
+      
+        <hr>
+        <div style="background-color: rgb(255, 75, 75); color: white;">
+            <hr style="border: 3px solid rgb(255, 255, 255);">
+            <h1>Modo desarrollador</h1>
+            <hr style="border: 3px solid rgb(255, 255, 255);">
+        </div>
+        <hr>
+        <h4> 
+            Registrar nuevo producto.
+        </h4>
+        <hr>
+
+        <form method="post" action="/nuevo_producto" enctype="multipart/form-data" style="width: 100%;">
+            <h6>Nombre del producto:</h6><hr>
+            <input type="text" name="nombre" style="width: 100%;" required><hr>
+            <h6>Descripción del producto:</h6><hr>
+            <textarea name="mensaje" style="width:100%" required></textarea><hr>
+            <h6>Imágen del producto:</h6><hr>
+            <input type="file" name="archivo" style="width: 68%; float: left; margin:1%;" required></input>
+            <button class="boton" type="submit">Enviar</button>
+            <hr>
+        </form >
+<br>
+<br>
+    
+
+   
+</div>
+
+</body>
+
+    <div style="position: fixed; width: 3%; height: 100%;top: 0%;right: 0">
+
+
+</html>
