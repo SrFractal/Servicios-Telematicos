@@ -16,21 +16,23 @@ Datos2="";
 Impar="";
 Par="";
 var A= 1;
+string=""
 //--------------------------------------------------------------
 function Listar(){
-    for(var i=1;i<Inventario.length;i++){
-        Datos=Datos+i+". "+Inventario[i]+'\n';
+    for(var i=1;i<Inventario.length;i++){ if(i>=10){string="J50";}if(i<10){string="J500";}
+        Datos=Datos+string+i+". "+Inventario[i]+'\n';
         A++;
     }
-    for(var i=Inventario.length-1;i>0;i--){
-        Datos2=Datos2+i+". "+Inventario[i]+'\n';
+    for(var i=Inventario.length-1;i>0;i--){if(i>=10){string="J50";}if(i<10){string="J500";}
+        Datos2=Datos2+string+i+". "+Inventario[i]+'\n';
     }
-    for(var i=1;i<Inventario.length;i=i+2){
-        Impar=Impar+i+". "+Inventario[i]+'\n';
+    for(var i=1;i<Inventario.length;i=i+2){if(i>=10){string="J50";}if(i<10){string="J500";}
+        Impar=Impar+string+i+". "+Inventario[i]+'\n';
     }
-    for(var i=2;i<Inventario.length;i=i+2){
-        Par=Par+i+". "+Inventario[i]+'\n';
+    for(var i=2;i<Inventario.length;i=i+2){if(i>=10){string="J50";}if(i<10){string="J500";}
+        Par=Par+string+i+". "+Inventario[i]+'\n';
     }
+    
 }
 A=String(A);
 //-Request-Response---------------------------------------------
@@ -49,7 +51,6 @@ app.get('/Inventario', (req,res) => {
 app.get('/Inventario/Ascendente', (req,res) => {
     Listar();
     console.clear();
-    console.log(Datos);
     res.render('Inventario_Sort.html',{Inventario:Datos});
     Datos=""; Par=""; Impar=""; A=1; Datos2="";
 });
@@ -57,7 +58,6 @@ app.get('/Inventario/Ascendente', (req,res) => {
 app.get('/Inventario/Descendente', (req,res) => {
     Listar();
     console.clear();
-    console.log(Datos2);
     res.render('Inventario_Sort.html',{Inventario:Datos2});
     Datos=""; Par=""; Impar=""; A=1; Datos2="";
 });
@@ -79,7 +79,7 @@ app.get('/Impar', (req,res) => {
 app.post('/', (req,res) => {
     console.clear();
     var B=req.body.Var; 
-    console.log(B+". "+Inventario[B]+":\n"+Informacion[B]);
+    console.log(Inventario[B]+":\n"+Informacion[B]);
 });
 
 app.post('/Nuevo', (req,res) => {
