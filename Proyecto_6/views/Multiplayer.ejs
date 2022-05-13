@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="/css/styles.css">
+   <title>Memoria</title>
+</head>
+
+<body onload="Imagen()">
+
+   <audio id="carta"><source src="/audio/carta.mp3" type="audio/mp3"></audio>
+   <audio id="falso"><source src="/audio/falso.mp3" type="audio/mp3"></audio>
+   <audio id="punto"><source src="/audio/punto.mp3" type="audio/mp3"></audio>
+   <audio id="menu"><source src="/audio/menu.mp3" type="audio/mp3"></audio>
+   <audio id="ok"><source src="/audio/ok.ogg" type="audio/ogg"></audio>
+
+<div class="game" id="game">
+   
+<form action="/multiplayer" method="post" id="SEND">
+
+<input type="hidden" id="Match" name="Match" value="">
+<input type="hidden" id="Puntaje" name="Puntaje" value="">
+<input type="hidden" id="sel" name="sel" value="">
+<input type="hidden" id="Done" name="Done" value="">
+<input type="hidden" id="CajaID" name="CajaID" value="">
+<input type="hidden" id="CartaID" name="CartaID" value="">
+
+   <script>
+      var Match='<%-Match-%>';
+      var Puntaje='<%-Puntaje-%>';
+      var sel='<%- sel -%>';
+      var Done='<%- Done -%>';
+      Done=Done.split(",");
+      var CajaID='<%- CajaID -%>';
+      CajaID=CajaID.split(",");
+      var CartaID='<%- CartaID -%>';
+      CartaID=CartaID.split(",");
+      var Cartas = '<%- Cartas -%>';
+      Cartas=Cartas.split(",");
+      console.log(Done);
+      for(var i=0; i<24; i++){
+         document.write('<div class="caja" id="caja'+i+'" onclick="Carta('+i+','+Cartas[i]+')"><div class="imagen">');
+         document.write('<img id="'+i+'" class="img" src="/img/Reverso.jpg" alt="'+i+'">');
+         document.write('</div></div>');
+      }
+      if (sel==3){
+            
+            window.setTimeout(Restart,1500); sel++;
+         }
+      function Carta(ID,Imagen){
+         
+         if(sel<3){
+         if (sel==1){CajaID[0]=ID;CartaID[0]=Imagen;sel++; document.getElementById("carta").currentTime = 0; document.getElementById("carta").play(); setTimeout(function () {Enviar();}, 450);}
+         if (sel==2 && CajaID[0]!=ID){CajaID[1]=ID;CartaID[1]=Imagen;sel++; document.getElementById("carta").currentTime = 0; document.getElementById("carta").play(); setTimeout(function () {Enviar();}, 450);}
+         
+         //setTimeout(function () {Enviar();}, 800);
+         }
+         
+         
+         
+      }
+      function Restart(){
+         
+         if(CartaID[0]==CartaID[1]){
+               Done[Done.length]=CajaID[0];
+               Done[Done.length]=CajaID[1];
+               Puntaje++;
+               document.getElementById("Puntaje").innerHTML=Puntaje;
+               if(Puntaje>=12){Terminar();Puntaje=0}
+               Match=1;
+            }
+         else{Match=0;}
+
+         if (Match==1){document.getElementById("punto").currentTime = 0; document.getElementById("punto").play();}
+         if (Match==0){document.getElementById("falso").currentTime = 0; document.getElementById("falso").play();}
+         
+         console.log(CartaID);
+         console.log(CajaID);
+         console.log(Done);
+         console.log(sel);
+         
+         
+         sel=1;
+         CajaID[0]="";
+         CajaID[1]="";
+         CartaID[0]="";
+         CartaID[1]="";
+         Imagen();
+         Enviar();
+      }
+      function Imagen(){
+         
+         for(var i=0; i<24; i++){
+            
+            if(Done.includes(i)==false){document.getElementById(i).src = "/img/Reverso.jpg";}
+
+         }
+         for(var i=1; i<Done.length; i++){
+            document.getElementById(Done[i]).src = "/img/Oculto.jpg";
+            document.getElementById("caja"+Done[i]).style = "cursor:not-allowed;";
+            document.getElementById("caja"+Done[i]).onclick = null;
+         }
+         
+         for(var i=0; i<CajaID.length; i++){
+            document.getElementById(CajaID[i]).src = "/img/"+CartaID[i]+".jpg";
+         }
+      }
+      function Terminar(){
+         document.getElementById("game").style.background="url('/img/Turno1.jpg') no-repeat";
+         document.getElementById("game").style.backgroundSize="51vw 40vw";
+      }
+      function menu(){
+         document.getElementById("menu").currentTime = 0; document.getElementById("menu").play();
+      }
+      function Reiniciar(){
+         document.getElementById("ok").currentTime = 0; document.getElementById("ok").play();
+         setTimeout(function () {location.href='/multiplayer';}, 800);
+      }
+      function volver(){
+         document.getElementById("ok").currentTime = 0; document.getElementById("ok").play();
+         setTimeout(function () {location.href='/';}, 800);
+      }
+      function Enviar(){
+         
+         document.getElementById("Match").value=Match;
+         document.getElementById("Puntaje").value=Puntaje;
+         document.getElementById("sel").value=sel;
+         document.getElementById("Done").value=Done;
+         document.getElementById("CajaID").value=CajaID;
+         document.getElementById("CartaID").value=CartaID;
+         console.log(sel)
+         document.getElementById("SEND").submit();
+      }
+   </script>
+
+   <!--div class="caja">
+      <div class="imagen"><img class="img" src="/img/Reverso.jpg" alt="Añadir producto..."></div>
+   </div-->
+</div>
+</form>
+<div class="menu">
+   <div class="caja_menu2">
+   Jugador 1 <br>
+   <h1 style="color:blue;" id="Puntaje">0</h1>
+   </div>
+
+   <div class="boton2" onclick="Reiniciar()" onmouseover="menu()">Reiniciar</div>
+   <div class="boton2" onclick="volver()" onmouseover="menu()">Menú</div>
+</div>
+</body>
+
+
+</html>

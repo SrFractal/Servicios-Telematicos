@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="/css/styles.css">
+   <title>Memoria</title>
+</head>
+
+<body>
+
+   <audio id="carta"><source src="/audio/carta.mp3" type="audio/mp3"></audio>
+   <audio id="falso"><source src="/audio/falso.mp3" type="audio/mp3"></audio>
+   <audio id="punto"><source src="/audio/punto.mp3" type="audio/mp3"></audio>
+   <audio id="menu"><source src="/audio/menu.mp3" type="audio/mp3"></audio>
+   <audio id="ok"><source src="/audio/ok.ogg" type="audio/ogg"></audio>
+
+<div class="game" id="game">
+   
+   <script>
+      var Match=0;
+      var Puntaje=0;
+      var sel=1;
+      var Done=[0];
+      var CajaID=[0];
+      var CartaID=[0];
+      var Cartas = '<%- Cartas -%>'
+      Cartas=Cartas.split(",");
+      console.log(Cartas);
+      for(var i=0; i<24; i++){
+         document.write('<div class="caja" id="caja'+i+'" onclick="Carta('+i+','+Cartas[i]+')"><div class="imagen">');
+         document.write('<img id="'+i+'" class="img" src="/img/Reverso.jpg" alt="'+i+'">');
+         document.write('</div></div>');
+      }
+      function Carta(ID,Imagen){
+         if(sel<3){
+         if (sel==1){CajaID[0]=ID;CartaID[0]=Imagen;sel++; document.getElementById("carta").currentTime = 0; document.getElementById("carta").play();}
+         if (sel==2 && CajaID[0]!=ID){CajaID[1]=ID;CartaID[1]=Imagen;sel++; document.getElementById("carta").currentTime = 0; document.getElementById("carta").play();}
+         document.getElementById(ID).src = "/img/"+Imagen+".jpg";
+         }
+         
+         if (sel==3){
+            
+            window.setTimeout(Restart,1500); sel++;
+            
+         }
+      }
+      function Restart(){
+         
+         if(CartaID[0]==CartaID[1]){
+               Done[Done.length]=CajaID[0];
+               Done[Done.length]=CajaID[1];
+               Puntaje++;
+               document.getElementById("Puntaje").innerHTML=Puntaje;
+               if(Puntaje>=12){Terminar();Puntaje=0}
+               Match=1;
+            }
+         else{Match=0;}
+
+         if (Match==1){document.getElementById("punto").currentTime = 0; document.getElementById("punto").play();}
+         if (Match==0){document.getElementById("falso").currentTime = 0; document.getElementById("falso").play();}
+            
+
+         for(var i=0; i<24; i++){
+            document.getElementById(i).src = "/img/Reverso.jpg";
+         }
+         for(var i=1; i<Done.length; i++){
+            document.getElementById(Done[i]).src = "/img/Oculto.jpg";
+            document.getElementById("caja"+Done[i]).style = "cursor:not-allowed;";
+            document.getElementById("caja"+Done[i]).onclick = null;
+         }
+         sel=1;
+         CajaID[0]="";
+         CajaID[1]="";
+         CartaID[0]="";
+         CartaID[1]="";
+         
+      }
+
+      function Terminar(){
+         document.getElementById("game").style.background="url('/img/Turno1.jpg') no-repeat";
+         document.getElementById("game").style.backgroundSize="51vw 40vw";
+      }
+      function menu(){
+         document.getElementById("menu").currentTime = 0; document.getElementById("menu").play();
+      }
+      function Reiniciar(){
+         document.getElementById("ok").currentTime = 0; document.getElementById("ok").play();
+         setTimeout(function () {location.href='/1-player';}, 800);
+      }
+      function volver(){
+         document.getElementById("ok").currentTime = 0; document.getElementById("ok").play();
+         setTimeout(function () {location.href='/';}, 800);
+      }
+   </script>
+
+   <!--div class="caja">
+      <div class="imagen"><img class="img" src="/img/Reverso.jpg" alt="Añadir producto..."></div>
+   </div-->
+</div>
+
+<div class="menu">
+   <div class="caja_menu2">
+   Jugador 1 <br>
+   <h1 style="color:blue;" id="Puntaje">0</h1>
+   </div>
+
+   <div class="boton2" onclick="Reiniciar()" onmouseover="menu()">Reiniciar</div>
+   <div class="boton2" onclick="volver()" onmouseover="menu()">Menú</div>
+</div>
+</body>
+
+
+</html>

@@ -1,0 +1,793 @@
+<!----------------------------------------------------------------------------------------------------------------------------------->
+<html>
+<!----------------------------------------------------------------------------------------------------------------------------------->
+<head> 
+<title>Memoria</title>
+</head>
+
+<!----------------------------------------------------------------------------------------------------------------------------------->
+<body onload="reset();">
+
+<!----------------------------------------------------------------------------------------------------------------------------------->
+
+{% if TURNO1==1  %}<img src="/static/Images/Turno1.jpg" width="618" height="130"/> 
+{% else  %}<img src="/static/Images/Turno1B.jpg" width="618" height="130"/> {% endif %}
+<br>
+{% if A1==1 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="A_1()" id="A_1"/> 
+{% elif A1==2 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" id="A_1"/> 
+{% elif A1==3 %}<img src="/static/Images/Oculto1.jpg" width="100" height="100" id="A_1"/> 
+{% else %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="A_1()" id="A_1"/> {% endif %}
+
+{% if A2==1 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="A_2()" id="A_2"/> 
+{% elif A2==2 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" id="A_2"/> 
+{% elif A2==3 %}<img src="/static/Images/Oculto1.jpg" width="100" height="100" id="A_2"/> 
+{% else %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="A_2()" id="A_2"/> {% endif %}
+
+{% if A3==1 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="A_3()" id="A_3"/> 
+{% elif A3==2 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" id="A_3"/>
+{% elif A3==3 %}<img src="/static/Images/Oculto1.jpg" width="100" height="100" id="A_3"/>  
+{% else %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="A_3()" id="A_3"/> {% endif %}
+
+{% if A4==1 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="A_4()" id="A_4"/> 
+{% elif A4==2 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" id="A_4"/> 
+{% elif A4==3 %}<img src="/static/Images/Oculto1.jpg" width="100" height="100" id="A_4"/> 
+{% else %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="A_4()" id="A_4"/> {% endif %}
+
+{% if A5==1 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="A_5()" id="A_5"/> 
+{% elif A5==2 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" id="A_5"/> 
+{% elif A5==3 %}<img src="/static/Images/Oculto1.jpg" width="100" height="100" id="A_5"/> 
+{% else %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="A_5()" id="A_5"/> {% endif %}
+
+{% if A6==1 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="A_6()" id="A_6"/> 
+{% elif A6==2 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" id="A_6"/> 
+{% elif A6==3 %}<img src="/static/Images/Oculto1.jpg" width="100" height="100" id="A_6"/> 
+{% else %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="A_6()" id="A_6"/> {% endif %}
+
+<br> 
+
+{% if B1==1 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="B_1()" id="B_1"/> 
+{% elif B1==2 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" id="B_1"/> 
+{% elif B1==3 %}<img src="/static/Images/Oculto1.jpg" width="100" height="100" id="B_1"/> 
+{% else %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="B_1()" id="B_1"/> {% endif %}
+
+{% if B2==1 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="B_2()" id="B_2"/> 
+{% elif B2==2 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" id="B_2"/> 
+{% elif B2==3 %}<img src="/static/Images/Oculto1.jpg" width="100" height="100" id="B_2"/> 
+{% else %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="B_2()" id="B_2"/> {% endif %}
+
+{% if B3==1 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="B_3()" id="B_3"/> 
+{% elif B3==2 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" id="B_3"/> 
+{% elif B3==3 %}<img src="/static/Images/Oculto1.jpg" width="100" height="100" id="B_3"/> 
+{% else %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="B_3()" id="B_3"/> {% endif %}
+
+{% if B4==1 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="B_4()" id="B_4"/> 
+{% elif B4==2 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" id="B_4"/>
+{% elif B4==3 %}<img src="/static/Images/Oculto1.jpg" width="100" height="100" id="B_4"/> 
+{% else %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="B_4()" id="B_4"/> {% endif %}
+
+{% if B5==1 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="B_5()" id="B_5"/> 
+{% elif B5==2 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" id="B_5"/> 
+{% elif B5==3 %}<img src="/static/Images/Oculto1.jpg" width="100" height="100" id="B_5"/> 
+{% else %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="B_5()" id="B_5"/> {% endif %}
+
+{% if B6==1 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="B_6()" id="B_6"/> 
+{% elif B6==2 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" id="B_6"/> 
+{% elif B6==3 %}<img src="/static/Images/Oculto1.jpg" width="100" height="100" id="B_6"/> 
+{% else %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="B_6()" id="B_6"/> {% endif %}
+
+<br> 
+
+{% if C1==1 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="C_1()" id="C_1"/> 
+{% elif C1==2 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" id="C_1"/> 
+{% elif C1==3 %}<img src="/static/Images/Oculto1.jpg" width="100" height="100" id="C_1"/>
+{% else %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="C_1()" id="C_1"/> {% endif %}
+
+{% if C2==1 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="C_2()" id="C_2"/> 
+{% elif C2==2 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" id="C_2"/> 
+{% elif C2==3 %}<img src="/static/Images/Oculto1.jpg" width="100" height="100" id="C_2"/>
+{% else %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="C_2()" id="C_2"/> {% endif %}
+
+{% if C3==1 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="C_3()" id="C_3"/> 
+{% elif C3==2 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" id="C_3"/> 
+{% elif C3==3 %}<img src="/static/Images/Oculto1.jpg" width="100" height="100" id="C_3"/>
+{% else %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="C_3()" id="C_3"/> {% endif %}
+
+{% if C4==1 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="C_4()" id="C_4"/> 
+{% elif C4==2 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" id="C_4"/>
+{% elif C4==3 %}<img src="/static/Images/Oculto1.jpg" width="100" height="100" id="C_4"/>
+{% else %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="C_4()" id="C_4"/> {% endif %}
+
+{% if C5==1 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="C_5()" id="C_5"/> 
+{% elif C5==2 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" id="C_5"/> 
+{% elif C5==3 %}<img src="/static/Images/Oculto1.jpg" width="100" height="100" id="C_5"/> 
+{% else %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="C_5()" id="C_5"/> {% endif %}
+
+{% if C6==1 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="C_6()" id="C_6"/> 
+{% elif C6==2 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" id="C_6"/> 
+{% elif C6==3 %}<img src="/static/Images/Oculto1.jpg" width="100" height="100" id="C_6"/> 
+{% else %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="C_6()" id="C_6"/> {% endif %}
+<br> 
+
+{% if D1==1 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="D_1()" id="D_1"/> 
+{% elif D1==2 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" id="D_1"/>
+{% elif D1==3 %}<img src="/static/Images/Oculto1.jpg" width="100" height="100" id="D_1"/> 
+{% else %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="D_1()" id="D_1"/> {% endif %}
+
+{% if D2==1 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="D_2()" id="D_2"/> 
+{% elif D2==2 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" id="D_2"/> 
+{% elif D2==3 %}<img src="/static/Images/Oculto1.jpg" width="100" height="100" id="D_2"/> 
+{% else %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="D_2()" id="D_2"/> {% endif %}
+
+{% if D3==1 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="D_3()" id="D_3"/> 
+{% elif D3==2 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" id="D_3"/> 
+{% elif D3==3 %}<img src="/static/Images/Oculto1.jpg" width="100" height="100" id="D_3"/> 
+{% else %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="D_3()" id="D_3"/> {% endif %}
+
+{% if D4==1 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="D_4()" id="D_4"/> 
+{% elif D4==2 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" id="D_4"/>
+{% elif D4==3 %}<img src="/static/Images/Oculto1.jpg" width="100" height="100" id="D_4"/> 
+{% else %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="D_4()" id="D_4"/> {% endif %}
+
+{% if D5==1 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="D_5()" id="D_5"/> 
+{% elif D5==2 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" id="D_5"/> 
+{% elif D5==3 %}<img src="/static/Images/Oculto1.jpg" width="100" height="100" id="D_5"/> 
+{% else %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="D_5()" id="D_5"/> {% endif %}
+
+{% if D6==1 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="D_6()" id="D_6"/> 
+{% elif D6==2 %}<img src="/static/Images/Reverso.jpg" width="100" height="100" id="D_6"/> 
+{% elif D6==3 %}<img src="/static/Images/Oculto1.jpg" width="100" height="100" id="D_6"/> 
+{% else %}<img src="/static/Images/Reverso.jpg" width="100" height="100" onclick="D_6()" id="D_6"/> {% endif %}
+<br> 
+{% if TURNO1==1  %}<img src="/static/Images/Turno0.jpg" width="618" height="130"/> 
+{% else %}<img src="/static/Images/Turno0B.jpg" width="618" height="130"/> {% endif %}
+<br>
+<font size="24" color="blue"> Puntaje:{{P2}}<br>{{USER}}</font>
+
+<!----------------------------------------------------------------------------------------------------------------------------------->
+<form id="fin" action="http://127.0.0.1:5000/" method="POST"/></form>
+<form id="send" action="http://127.0.0.1:5000/Memoria2" method="POST"/>
+
+<input type="text" name="TURNO1" value={{TURNO1}} id="TURNO1" hidden="true">
+<input type="text" name="TURNO2" value={{TURNO2}} id="TURNO2" hidden="true">
+<input type="text" name="IGUAL" value={{IGUAL}} id="IGUAL" hidden="true">
+<input type="text" name="P1" value={{P1}} id="P1" hidden="true">
+<input type="text" name="P2" value={{P2}} id="P2" hidden="true">
+<input type="text" name="SEL" value={{SEL}} id="SEL" hidden="true">
+<input type="text" name="Carta1" value={{Carta1}} id="Carta1" hidden="true">
+<input type="text" name="Carta2" value={{Carta2}} id="Carta2" hidden="true">
+
+<input type="text" name="CajaA1" value={{A1}} id="CajaA1" hidden="true">
+<input type="text" name="CajaA2" value={{A2}} id="CajaA2" hidden="true">
+<input type="text" name="CajaA3" value={{A3}} id="CajaA3" hidden="true">
+<input type="text" name="CajaA4" value={{A4}} id="CajaA4" hidden="true">
+<input type="text" name="CajaA5" value={{A5}} id="CajaA5" hidden="true">
+<input type="text" name="CajaA6" value={{A6}} id="CajaA6" hidden="true">
+
+<input type="text" name="CajaB1" value={{B1}} id="CajaB1" hidden="true">
+<input type="text" name="CajaB2" value={{B2}} id="CajaB2" hidden="true">
+<input type="text" name="CajaB3" value={{B3}} id="CajaB3" hidden="true">
+<input type="text" name="CajaB4" value={{B4}} id="CajaB4" hidden="true">
+<input type="text" name="CajaB5" value={{B5}} id="CajaB5" hidden="true">
+<input type="text" name="CajaB6" value={{B6}} id="CajaB6" hidden="true">
+
+<input type="text" name="CajaC1" value={{C1}} id="CajaC1" hidden="true">
+<input type="text" name="CajaC2" value={{C2}} id="CajaC2" hidden="true">
+<input type="text" name="CajaC3" value={{C3}} id="CajaC3" hidden="true">
+<input type="text" name="CajaC4" value={{C4}} id="CajaC4" hidden="true">
+<input type="text" name="CajaC5" value={{C5}} id="CajaC5" hidden="true">
+<input type="text" name="CajaC6" value={{C6}} id="CajaC6" hidden="true">
+
+<input type="text" name="CajaD1" value={{D1}} id="CajaD1" hidden="true">
+<input type="text" name="CajaD2" value={{D2}} id="CajaD2" hidden="true">
+<input type="text" name="CajaD3" value={{D3}} id="CajaD3" hidden="true">
+<input type="text" name="CajaD4" value={{D4}} id="CajaD4" hidden="true">
+<input type="text" name="CajaD5" value={{D5}} id="CajaD5" hidden="true">
+<input type="text" name="CajaD6" value={{D6}} id="CajaD6" hidden="true">
+
+<input type="text" name="CajaIA1" value={{IA1}} id="CajaIA1" hidden="true">
+<input type="text" name="CajaIA2" value={{IA2}} id="CajaIA2" hidden="true">
+<input type="text" name="CajaIA3" value={{IA3}} id="CajaIA3" hidden="true">
+<input type="text" name="CajaIA4" value={{IA4}} id="CajaIA4" hidden="true">
+<input type="text" name="CajaIA5" value={{IA5}} id="CajaIA5" hidden="true">
+<input type="text" name="CajaIA6" value={{IA6}} id="CajaIA6" hidden="true">
+
+<input type="text" name="CajaIB1" value={{IB1}} id="CajaIB1" hidden="true">
+<input type="text" name="CajaIB2" value={{IB2}} id="CajaIB2" hidden="true">
+<input type="text" name="CajaIB3" value={{IB3}} id="CajaIB3" hidden="true">
+<input type="text" name="CajaIB4" value={{IB4}} id="CajaIB4" hidden="true">
+<input type="text" name="CajaIB5" value={{IB5}} id="CajaIB5" hidden="true">
+<input type="text" name="CajaIB6" value={{IB6}} id="CajaIB6" hidden="true">
+
+<input type="text" name="CajaIC1" value={{IC1}} id="CajaIC1" hidden="true">
+<input type="text" name="CajaIC2" value={{IC2}} id="CajaIC2" hidden="true">
+<input type="text" name="CajaIC3" value={{IC3}} id="CajaIC3" hidden="true">
+<input type="text" name="CajaIC4" value={{IC4}} id="CajaIC4" hidden="true">
+<input type="text" name="CajaIC5" value={{IC5}} id="CajaIC5" hidden="true">
+<input type="text" name="CajaIC6" value={{IC6}} id="CajaIC6" hidden="true">
+
+<input type="text" name="CajaID1" value={{ID1}} id="CajaID1" hidden="true">
+<input type="text" name="CajaID2" value={{ID2}} id="CajaID2" hidden="true">
+<input type="text" name="CajaID3" value={{ID3}} id="CajaID3" hidden="true">
+<input type="text" name="CajaID4" value={{ID4}} id="CajaID4" hidden="true">
+<input type="text" name="CajaID5" value={{ID5}} id="CajaID5" hidden="true">
+<input type="text" name="CajaID6" value={{ID6}} id="CajaID6" hidden="true">
+
+
+
+<!----------------------------------------------------------------------------------------------------------------------------------->
+<script type="text/javascript">
+var carta1=document.getElementById("Carta1").value;
+var carta2=document.getElementById("Carta2").value;
+var sel=document.getElementById("SEL").value;
+
+function r(){
+document.getElementById("SEL").value=0;
+
+
+if(document.getElementById("CajaA1").value==3){}
+if(document.getElementById("CajaA1").value!=3){document.getElementById("CajaA1").value=1;}
+if(document.getElementById("CajaA2").value==3){}
+if(document.getElementById("CajaA2").value!=3){document.getElementById("CajaA2").value=1;}
+if(document.getElementById("CajaA3").value==3){}
+if(document.getElementById("CajaA3").value!=3){document.getElementById("CajaA3").value=1;}
+if(document.getElementById("CajaA4").value==3){}
+if(document.getElementById("CajaA4").value!=3){document.getElementById("CajaA4").value=1;}
+if(document.getElementById("CajaA5").value==3){}
+if(document.getElementById("CajaA5").value!=3){document.getElementById("CajaA5").value=1;}
+if(document.getElementById("CajaA6").value==3){}
+if(document.getElementById("CajaA6").value!=3){document.getElementById("CajaA6").value=1;}
+
+if(document.getElementById("CajaB1").value==3){}
+if(document.getElementById("CajaB1").value!=3){document.getElementById("CajaB1").value=1;}
+if(document.getElementById("CajaB2").value==3){}
+if(document.getElementById("CajaB2").value!=3){document.getElementById("CajaB2").value=1;}
+if(document.getElementById("CajaB3").value==3){}
+if(document.getElementById("CajaB3").value!=3){document.getElementById("CajaB3").value=1;}
+if(document.getElementById("CajaB4").value==3){}
+if(document.getElementById("CajaB4").value!=3){document.getElementById("CajaB4").value=1;}
+if(document.getElementById("CajaB5").value==3){}
+if(document.getElementById("CajaB5").value!=3){document.getElementById("CajaB5").value=1;}
+if(document.getElementById("CajaB6").value==3){}
+if(document.getElementById("CajaB6").value!=3){document.getElementById("CajaB6").value=1;}
+
+if(document.getElementById("CajaC1").value==3){}
+if(document.getElementById("CajaC1").value!=3){document.getElementById("CajaC1").value=1;}
+if(document.getElementById("CajaC2").value==3){}
+if(document.getElementById("CajaC2").value!=3){document.getElementById("CajaC2").value=1;}
+if(document.getElementById("CajaC3").value==3){}
+if(document.getElementById("CajaC3").value!=3){document.getElementById("CajaC3").value=1;}
+if(document.getElementById("CajaC4").value==3){}
+if(document.getElementById("CajaC4").value!=3){document.getElementById("CajaC4").value=1;}
+if(document.getElementById("CajaC5").value==3){}
+if(document.getElementById("CajaC5").value!=3){document.getElementById("CajaC5").value=1;}
+if(document.getElementById("CajaC6").value==3){}
+if(document.getElementById("CajaC6").value!=3){document.getElementById("CajaC6").value=1;}
+
+if(document.getElementById("CajaD1").value==3){}
+if(document.getElementById("CajaD1").value!=3){document.getElementById("CajaD1").value=1;}
+if(document.getElementById("CajaD2").value==3){}
+if(document.getElementById("CajaD2").value!=3){document.getElementById("CajaD2").value=1;}
+if(document.getElementById("CajaD3").value==3){}
+if(document.getElementById("CajaD3").value!=3){document.getElementById("CajaD3").value=1;}
+if(document.getElementById("CajaD4").value==3){}
+if(document.getElementById("CajaD4").value!=3){document.getElementById("CajaD4").value=1;}
+if(document.getElementById("CajaD5").value==3){}
+if(document.getElementById("CajaD5").value!=3){document.getElementById("CajaD5").value=1;}
+if(document.getElementById("CajaD6").value==3){}
+if(document.getElementById("CajaD6").value!=3){document.getElementById("CajaD6").value=1;}
+
+document.getElementById("send").submit();}
+
+
+function reset(){
+
+
+if(document.getElementById("CajaA1").value==3 && document.getElementById("CajaA2").value==3 && document.getElementById("CajaA3").value==3 &&
+   document.getElementById("CajaA4").value==3 && document.getElementById("CajaA5").value==3 && document.getElementById("CajaA6").value==3 && 
+   document.getElementById("CajaB1").value==3 && document.getElementById("CajaB2").value==3 && document.getElementById("CajaB3").value==3 &&
+   document.getElementById("CajaB4").value==3 && document.getElementById("CajaB5").value==3 && document.getElementById("CajaB6").value==3 && 
+   document.getElementById("CajaC1").value==3 && document.getElementById("CajaC2").value==3 && document.getElementById("CajaC3").value==3 &&
+   document.getElementById("CajaC4").value==3 && document.getElementById("CajaC5").value==3 && document.getElementById("CajaC6").value==3 && 
+   document.getElementById("CajaD1").value==3 && document.getElementById("CajaD2").value==3 && document.getElementById("CajaD3").value==3 &&
+   document.getElementById("CajaD4").value==3 && document.getElementById("CajaD5").value==3 && document.getElementById("CajaD6").value==3){
+   document.getElementById("fin").submit();}
+
+
+if(sel==2 || sel==1){
+
+if(document.getElementById("CajaA1").value==0){document.getElementById("A_1").onclick="";
+if(document.getElementById("CajaIA1").value==1) {document.getElementById("A_1").src="/static/Images/1.jpg";}
+if(document.getElementById("CajaIA1").value==2) {document.getElementById("A_1").src="/static/Images/2.jpg";}
+if(document.getElementById("CajaIA1").value==3) {document.getElementById("A_1").src="/static/Images/3.jpg";}
+if(document.getElementById("CajaIA1").value==4) {document.getElementById("A_1").src="/static/Images/4.jpg";}
+if(document.getElementById("CajaIA1").value==5) {document.getElementById("A_1").src="/static/Images/5.jpg";}
+if(document.getElementById("CajaIA1").value==6) {document.getElementById("A_1").src="/static/Images/6.jpg";}
+if(document.getElementById("CajaIA1").value==7) {document.getElementById("A_1").src="/static/Images/7.jpg";}
+if(document.getElementById("CajaIA1").value==8) {document.getElementById("A_1").src="/static/Images/8.jpg";}
+if(document.getElementById("CajaIA1").value==9) {document.getElementById("A_1").src="/static/Images/9.jpg";}
+if(document.getElementById("CajaIA1").value==10){document.getElementById("A_1").src="/static/Images/10.jpg";}
+if(document.getElementById("CajaIA1").value==11){document.getElementById("A_1").src="/static/Images/11.jpg";}
+if(document.getElementById("CajaIA1").value==12){document.getElementById("A_1").src="/static/Images/12.jpg";}
+}if(document.getElementById("CajaA1").value!=3 && sel==2){document.getElementById("CajaA1").value=2;document.getElementById("A_1").onclick="";}
+if(document.getElementById("CajaA2").value==0){document.getElementById("A_2").onclick="";
+if(document.getElementById("CajaIA2").value==1) {document.getElementById("A_2").src="/static/Images/1.jpg";}
+if(document.getElementById("CajaIA2").value==2) {document.getElementById("A_2").src="/static/Images/2.jpg";}
+if(document.getElementById("CajaIA2").value==3) {document.getElementById("A_2").src="/static/Images/3.jpg";}
+if(document.getElementById("CajaIA2").value==4) {document.getElementById("A_2").src="/static/Images/4.jpg";}
+if(document.getElementById("CajaIA2").value==5) {document.getElementById("A_2").src="/static/Images/5.jpg";}
+if(document.getElementById("CajaIA2").value==6) {document.getElementById("A_2").src="/static/Images/6.jpg";}
+if(document.getElementById("CajaIA2").value==7) {document.getElementById("A_2").src="/static/Images/7.jpg";}
+if(document.getElementById("CajaIA2").value==8) {document.getElementById("A_2").src="/static/Images/8.jpg";}
+if(document.getElementById("CajaIA2").value==9) {document.getElementById("A_2").src="/static/Images/9.jpg";}
+if(document.getElementById("CajaIA2").value==10){document.getElementById("A_2").src="/static/Images/10.jpg";}
+if(document.getElementById("CajaIA2").value==11){document.getElementById("A_2").src="/static/Images/11.jpg";}
+if(document.getElementById("CajaIA2").value==12){document.getElementById("A_2").src="/static/Images/12.jpg";}
+}if(document.getElementById("CajaA2").value!=3 && sel==2){document.getElementById("CajaA2").value=2;document.getElementById("A_2").onclick="";}
+if(document.getElementById("CajaA3").value==0){document.getElementById("A_3").onclick="";
+if(document.getElementById("CajaIA3").value==1) {document.getElementById("A_3").src="/static/Images/1.jpg";}
+if(document.getElementById("CajaIA3").value==2) {document.getElementById("A_3").src="/static/Images/2.jpg";}
+if(document.getElementById("CajaIA3").value==3) {document.getElementById("A_3").src="/static/Images/3.jpg";}
+if(document.getElementById("CajaIA3").value==4) {document.getElementById("A_3").src="/static/Images/4.jpg";}
+if(document.getElementById("CajaIA3").value==5) {document.getElementById("A_3").src="/static/Images/5.jpg";}
+if(document.getElementById("CajaIA3").value==6) {document.getElementById("A_3").src="/static/Images/6.jpg";}
+if(document.getElementById("CajaIA3").value==7) {document.getElementById("A_3").src="/static/Images/7.jpg";}
+if(document.getElementById("CajaIA3").value==8) {document.getElementById("A_3").src="/static/Images/8.jpg";}
+if(document.getElementById("CajaIA3").value==9) {document.getElementById("A_3").src="/static/Images/9.jpg";}
+if(document.getElementById("CajaIA3").value==10){document.getElementById("A_3").src="/static/Images/10.jpg";}
+if(document.getElementById("CajaIA3").value==11){document.getElementById("A_3").src="/static/Images/11.jpg";}
+if(document.getElementById("CajaIA3").value==12){document.getElementById("A_3").src="/static/Images/12.jpg";}
+}if(document.getElementById("CajaA3").value!=3 && sel==2){document.getElementById("CajaA3").value=2;document.getElementById("A_3").onclick="";}
+if(document.getElementById("CajaA4").value==0){document.getElementById("A_4").onclick="";
+if(document.getElementById("CajaIA4").value==1) {document.getElementById("A_4").src="/static/Images/1.jpg";}
+if(document.getElementById("CajaIA4").value==2) {document.getElementById("A_4").src="/static/Images/2.jpg";}
+if(document.getElementById("CajaIA4").value==3) {document.getElementById("A_4").src="/static/Images/3.jpg";}
+if(document.getElementById("CajaIA4").value==4) {document.getElementById("A_4").src="/static/Images/4.jpg";}
+if(document.getElementById("CajaIA4").value==5) {document.getElementById("A_4").src="/static/Images/5.jpg";}
+if(document.getElementById("CajaIA4").value==6) {document.getElementById("A_4").src="/static/Images/6.jpg";}
+if(document.getElementById("CajaIA4").value==7) {document.getElementById("A_4").src="/static/Images/7.jpg";}
+if(document.getElementById("CajaIA4").value==8) {document.getElementById("A_4").src="/static/Images/8.jpg";}
+if(document.getElementById("CajaIA4").value==9) {document.getElementById("A_4").src="/static/Images/9.jpg";}
+if(document.getElementById("CajaIA4").value==10){document.getElementById("A_4").src="/static/Images/10.jpg";}
+if(document.getElementById("CajaIA4").value==11){document.getElementById("A_4").src="/static/Images/11.jpg";}
+if(document.getElementById("CajaIA4").value==12){document.getElementById("A_4").src="/static/Images/12.jpg";}
+}if(document.getElementById("CajaA4").value!=3 && sel==2){document.getElementById("CajaA4").value=2;document.getElementById("A_4").onclick="";}
+if(document.getElementById("CajaA5").value==0){document.getElementById("A_5").onclick="";
+if(document.getElementById("CajaIA5").value==1) {document.getElementById("A_5").src="/static/Images/1.jpg";}
+if(document.getElementById("CajaIA5").value==2) {document.getElementById("A_5").src="/static/Images/2.jpg";}
+if(document.getElementById("CajaIA5").value==3) {document.getElementById("A_5").src="/static/Images/3.jpg";}
+if(document.getElementById("CajaIA5").value==4) {document.getElementById("A_5").src="/static/Images/4.jpg";}
+if(document.getElementById("CajaIA5").value==5) {document.getElementById("A_5").src="/static/Images/5.jpg";}
+if(document.getElementById("CajaIA5").value==6) {document.getElementById("A_5").src="/static/Images/6.jpg";}
+if(document.getElementById("CajaIA5").value==7) {document.getElementById("A_5").src="/static/Images/7.jpg";}
+if(document.getElementById("CajaIA5").value==8) {document.getElementById("A_5").src="/static/Images/8.jpg";}
+if(document.getElementById("CajaIA5").value==9) {document.getElementById("A_5").src="/static/Images/9.jpg";}
+if(document.getElementById("CajaIA5").value==10){document.getElementById("A_5").src="/static/Images/10.jpg";}
+if(document.getElementById("CajaIA5").value==11){document.getElementById("A_5").src="/static/Images/11.jpg";}
+if(document.getElementById("CajaIA5").value==12){document.getElementById("A_5").src="/static/Images/12.jpg";}
+}if(document.getElementById("CajaA5").value!=3 && sel==2){document.getElementById("CajaA5").value=2;document.getElementById("A_5").onclick="";}
+if(document.getElementById("CajaA6").value==0){document.getElementById("A_6").onclick="";
+if(document.getElementById("CajaIA6").value==1) {document.getElementById("A_6").src="/static/Images/1.jpg";}
+if(document.getElementById("CajaIA6").value==2) {document.getElementById("A_6").src="/static/Images/2.jpg";}
+if(document.getElementById("CajaIA6").value==3) {document.getElementById("A_6").src="/static/Images/3.jpg";}
+if(document.getElementById("CajaIA6").value==4) {document.getElementById("A_6").src="/static/Images/4.jpg";}
+if(document.getElementById("CajaIA6").value==5) {document.getElementById("A_6").src="/static/Images/5.jpg";}
+if(document.getElementById("CajaIA6").value==6) {document.getElementById("A_6").src="/static/Images/6.jpg";}
+if(document.getElementById("CajaIA6").value==7) {document.getElementById("A_6").src="/static/Images/7.jpg";}
+if(document.getElementById("CajaIA6").value==8) {document.getElementById("A_6").src="/static/Images/8.jpg";}
+if(document.getElementById("CajaIA6").value==9) {document.getElementById("A_6").src="/static/Images/9.jpg";}
+if(document.getElementById("CajaIA6").value==10){document.getElementById("A_6").src="/static/Images/10.jpg";}
+if(document.getElementById("CajaIA6").value==11){document.getElementById("A_6").src="/static/Images/11.jpg";}
+if(document.getElementById("CajaIA6").value==12){document.getElementById("A_6").src="/static/Images/12.jpg";}
+}if(document.getElementById("CajaA6").value!=3 && sel==2){document.getElementById("CajaA6").value=2;document.getElementById("A_6").onclick="";}
+
+
+if(document.getElementById("CajaB1").value==0){document.getElementById("B_1").onclick="";
+if(document.getElementById("CajaIB1").value==1) {document.getElementById("B_1").src="/static/Images/1.jpg";}
+if(document.getElementById("CajaIB1").value==2) {document.getElementById("B_1").src="/static/Images/2.jpg";}
+if(document.getElementById("CajaIB1").value==3) {document.getElementById("B_1").src="/static/Images/3.jpg";}
+if(document.getElementById("CajaIB1").value==4) {document.getElementById("B_1").src="/static/Images/4.jpg";}
+if(document.getElementById("CajaIB1").value==5) {document.getElementById("B_1").src="/static/Images/5.jpg";}
+if(document.getElementById("CajaIB1").value==6) {document.getElementById("B_1").src="/static/Images/6.jpg";}
+if(document.getElementById("CajaIB1").value==7) {document.getElementById("B_1").src="/static/Images/7.jpg";}
+if(document.getElementById("CajaIB1").value==8) {document.getElementById("B_1").src="/static/Images/8.jpg";}
+if(document.getElementById("CajaIB1").value==9) {document.getElementById("B_1").src="/static/Images/9.jpg";}
+if(document.getElementById("CajaIB1").value==10){document.getElementById("B_1").src="/static/Images/10.jpg";}
+if(document.getElementById("CajaIB1").value==11){document.getElementById("B_1").src="/static/Images/11.jpg";}
+if(document.getElementById("CajaIB1").value==12){document.getElementById("B_1").src="/static/Images/12.jpg";}
+}if(document.getElementById("CajaB1").value!=3 && sel==2){document.getElementById("CajaB1").value=2;document.getElementById("B_1").onclick="";}
+if(document.getElementById("CajaB2").value==0){document.getElementById("B_2").onclick="";
+if(document.getElementById("CajaIB2").value==1) {document.getElementById("B_2").src="/static/Images/1.jpg";}
+if(document.getElementById("CajaIB2").value==2) {document.getElementById("B_2").src="/static/Images/2.jpg";}
+if(document.getElementById("CajaIB2").value==3) {document.getElementById("B_2").src="/static/Images/3.jpg";}
+if(document.getElementById("CajaIB2").value==4) {document.getElementById("B_2").src="/static/Images/4.jpg";}
+if(document.getElementById("CajaIB2").value==5) {document.getElementById("B_2").src="/static/Images/5.jpg";}
+if(document.getElementById("CajaIB2").value==6) {document.getElementById("B_2").src="/static/Images/6.jpg";}
+if(document.getElementById("CajaIB2").value==7) {document.getElementById("B_2").src="/static/Images/7.jpg";}
+if(document.getElementById("CajaIB2").value==8) {document.getElementById("B_2").src="/static/Images/8.jpg";}
+if(document.getElementById("CajaIB2").value==9) {document.getElementById("B_2").src="/static/Images/9.jpg";}
+if(document.getElementById("CajaIB2").value==10){document.getElementById("B_2").src="/static/Images/10.jpg";}
+if(document.getElementById("CajaIB2").value==11){document.getElementById("B_2").src="/static/Images/11.jpg";}
+if(document.getElementById("CajaIB2").value==12){document.getElementById("B_2").src="/static/Images/12.jpg";}
+}if(document.getElementById("CajaB2").value!=3 && sel==2){document.getElementById("CajaB2").value=2;document.getElementById("B_2").onclick="";}
+if(document.getElementById("CajaB3").value==0){document.getElementById("B_3").onclick="";
+if(document.getElementById("CajaIB3").value==1) {document.getElementById("B_3").src="/static/Images/1.jpg";}
+if(document.getElementById("CajaIB3").value==2) {document.getElementById("B_3").src="/static/Images/2.jpg";}
+if(document.getElementById("CajaIB3").value==3) {document.getElementById("B_3").src="/static/Images/3.jpg";}
+if(document.getElementById("CajaIB3").value==4) {document.getElementById("B_3").src="/static/Images/4.jpg";}
+if(document.getElementById("CajaIB3").value==5) {document.getElementById("B_3").src="/static/Images/5.jpg";}
+if(document.getElementById("CajaIB3").value==6) {document.getElementById("B_3").src="/static/Images/6.jpg";}
+if(document.getElementById("CajaIB3").value==7) {document.getElementById("B_3").src="/static/Images/7.jpg";}
+if(document.getElementById("CajaIB3").value==8) {document.getElementById("B_3").src="/static/Images/8.jpg";}
+if(document.getElementById("CajaIB3").value==9) {document.getElementById("B_3").src="/static/Images/9.jpg";}
+if(document.getElementById("CajaIB3").value==10){document.getElementById("B_3").src="/static/Images/10.jpg";}
+if(document.getElementById("CajaIB3").value==11){document.getElementById("B_3").src="/static/Images/11.jpg";}
+if(document.getElementById("CajaIB3").value==12){document.getElementById("B_3").src="/static/Images/12.jpg";}
+}if(document.getElementById("CajaB3").value!=3 && sel==2){document.getElementById("CajaB3").value=2;document.getElementById("B_3").onclick="";}
+if(document.getElementById("CajaB4").value==0){document.getElementById("B_4").onclick="";
+if(document.getElementById("CajaIB4").value==1) {document.getElementById("B_4").src="/static/Images/1.jpg";}
+if(document.getElementById("CajaIB4").value==2) {document.getElementById("B_4").src="/static/Images/2.jpg";}
+if(document.getElementById("CajaIB4").value==3) {document.getElementById("B_4").src="/static/Images/3.jpg";}
+if(document.getElementById("CajaIB4").value==4) {document.getElementById("B_4").src="/static/Images/4.jpg";}
+if(document.getElementById("CajaIB4").value==5) {document.getElementById("B_4").src="/static/Images/5.jpg";}
+if(document.getElementById("CajaIB4").value==6) {document.getElementById("B_4").src="/static/Images/6.jpg";}
+if(document.getElementById("CajaIB4").value==7) {document.getElementById("B_4").src="/static/Images/7.jpg";}
+if(document.getElementById("CajaIB4").value==8) {document.getElementById("B_4").src="/static/Images/8.jpg";}
+if(document.getElementById("CajaIB4").value==9) {document.getElementById("B_4").src="/static/Images/9.jpg";}
+if(document.getElementById("CajaIB4").value==10){document.getElementById("B_4").src="/static/Images/10.jpg";}
+if(document.getElementById("CajaIB4").value==11){document.getElementById("B_4").src="/static/Images/11.jpg";}
+if(document.getElementById("CajaIB4").value==12){document.getElementById("B_4").src="/static/Images/12.jpg";}
+}if(document.getElementById("CajaB4").value!=3 && sel==2){document.getElementById("CajaB4").value=2;document.getElementById("B_4").onclick="";}
+if(document.getElementById("CajaB5").value==0){document.getElementById("B_5").onclick="";
+if(document.getElementById("CajaIB5").value==1) {document.getElementById("B_5").src="/static/Images/1.jpg";}
+if(document.getElementById("CajaIB5").value==2) {document.getElementById("B_5").src="/static/Images/2.jpg";}
+if(document.getElementById("CajaIB5").value==3) {document.getElementById("B_5").src="/static/Images/3.jpg";}
+if(document.getElementById("CajaIB5").value==4) {document.getElementById("B_5").src="/static/Images/4.jpg";}
+if(document.getElementById("CajaIB5").value==5) {document.getElementById("B_5").src="/static/Images/5.jpg";}
+if(document.getElementById("CajaIB5").value==6) {document.getElementById("B_5").src="/static/Images/6.jpg";}
+if(document.getElementById("CajaIB5").value==7) {document.getElementById("B_5").src="/static/Images/7.jpg";}
+if(document.getElementById("CajaIB5").value==8) {document.getElementById("B_5").src="/static/Images/8.jpg";}
+if(document.getElementById("CajaIB5").value==9) {document.getElementById("B_5").src="/static/Images/9.jpg";}
+if(document.getElementById("CajaIB5").value==10){document.getElementById("B_5").src="/static/Images/10.jpg";}
+if(document.getElementById("CajaIB5").value==11){document.getElementById("B_5").src="/static/Images/11.jpg";}
+if(document.getElementById("CajaIB5").value==12){document.getElementById("B_5").src="/static/Images/12.jpg";}
+}if(document.getElementById("CajaB5").value!=3 && sel==2){document.getElementById("CajaB5").value=2;document.getElementById("B_5").onclick="";}
+if(document.getElementById("CajaB6").value==0){document.getElementById("B_6").onclick="";
+if(document.getElementById("CajaIB6").value==1) {document.getElementById("B_6").src="/static/Images/1.jpg";}
+if(document.getElementById("CajaIB6").value==2) {document.getElementById("B_6").src="/static/Images/2.jpg";}
+if(document.getElementById("CajaIB6").value==3) {document.getElementById("B_6").src="/static/Images/3.jpg";}
+if(document.getElementById("CajaIB6").value==4) {document.getElementById("B_6").src="/static/Images/4.jpg";}
+if(document.getElementById("CajaIB6").value==5) {document.getElementById("B_6").src="/static/Images/5.jpg";}
+if(document.getElementById("CajaIB6").value==6) {document.getElementById("B_6").src="/static/Images/6.jpg";}
+if(document.getElementById("CajaIB6").value==7) {document.getElementById("B_6").src="/static/Images/7.jpg";}
+if(document.getElementById("CajaIB6").value==8) {document.getElementById("B_6").src="/static/Images/8.jpg";}
+if(document.getElementById("CajaIB6").value==9) {document.getElementById("B_6").src="/static/Images/9.jpg";}
+if(document.getElementById("CajaIB6").value==10){document.getElementById("B_6").src="/static/Images/10.jpg";}
+if(document.getElementById("CajaIB6").value==11){document.getElementById("B_6").src="/static/Images/11.jpg";}
+if(document.getElementById("CajaIB6").value==12){document.getElementById("B_6").src="/static/Images/12.jpg";}
+}if(document.getElementById("CajaB6").value!=3 && sel==2){document.getElementById("CajaB6").value=2;document.getElementById("B_6").onclick="";}
+
+
+if(document.getElementById("CajaC1").value==0){document.getElementById("C_1").onclick="";
+if(document.getElementById("CajaIC1").value==1) {document.getElementById("C_1").src="/static/Images/1.jpg";}
+if(document.getElementById("CajaIC1").value==2) {document.getElementById("C_1").src="/static/Images/2.jpg";}
+if(document.getElementById("CajaIC1").value==3) {document.getElementById("C_1").src="/static/Images/3.jpg";}
+if(document.getElementById("CajaIC1").value==4) {document.getElementById("C_1").src="/static/Images/4.jpg";}
+if(document.getElementById("CajaIC1").value==5) {document.getElementById("C_1").src="/static/Images/5.jpg";}
+if(document.getElementById("CajaIC1").value==6) {document.getElementById("C_1").src="/static/Images/6.jpg";}
+if(document.getElementById("CajaIC1").value==7) {document.getElementById("C_1").src="/static/Images/7.jpg";}
+if(document.getElementById("CajaIC1").value==8) {document.getElementById("C_1").src="/static/Images/8.jpg";}
+if(document.getElementById("CajaIC1").value==9) {document.getElementById("C_1").src="/static/Images/9.jpg";}
+if(document.getElementById("CajaIC1").value==10){document.getElementById("C_1").src="/static/Images/10.jpg";}
+if(document.getElementById("CajaIC1").value==11){document.getElementById("C_1").src="/static/Images/11.jpg";}
+if(document.getElementById("CajaIC1").value==12){document.getElementById("C_1").src="/static/Images/12.jpg";}
+}if(document.getElementById("CajaC1").value!=3 && sel==2){document.getElementById("CajaC1").value=2;document.getElementById("C_1").onclick="";}
+if(document.getElementById("CajaC2").value==0){document.getElementById("C_2").onclick="";
+if(document.getElementById("CajaIC2").value==1) {document.getElementById("C_2").src="/static/Images/1.jpg";}
+if(document.getElementById("CajaIC2").value==2) {document.getElementById("C_2").src="/static/Images/2.jpg";}
+if(document.getElementById("CajaIC2").value==3) {document.getElementById("C_2").src="/static/Images/3.jpg";}
+if(document.getElementById("CajaIC2").value==4) {document.getElementById("C_2").src="/static/Images/4.jpg";}
+if(document.getElementById("CajaIC2").value==5) {document.getElementById("C_2").src="/static/Images/5.jpg";}
+if(document.getElementById("CajaIC2").value==6) {document.getElementById("C_2").src="/static/Images/6.jpg";}
+if(document.getElementById("CajaIC2").value==7) {document.getElementById("C_2").src="/static/Images/7.jpg";}
+if(document.getElementById("CajaIC2").value==8) {document.getElementById("C_2").src="/static/Images/8.jpg";}
+if(document.getElementById("CajaIC2").value==9) {document.getElementById("C_2").src="/static/Images/9.jpg";}
+if(document.getElementById("CajaIC2").value==10){document.getElementById("C_2").src="/static/Images/10.jpg";}
+if(document.getElementById("CajaIC2").value==11){document.getElementById("C_2").src="/static/Images/11.jpg";}
+if(document.getElementById("CajaIC2").value==12){document.getElementById("C_2").src="/static/Images/12.jpg";}
+}if(document.getElementById("CajaC2").value!=3 && sel==2){document.getElementById("CajaC2").value=2;document.getElementById("C_2").onclick="";}
+if(document.getElementById("CajaC3").value==0){document.getElementById("C_3").onclick="";
+if(document.getElementById("CajaIC3").value==1) {document.getElementById("C_3").src="/static/Images/1.jpg";}
+if(document.getElementById("CajaIC3").value==2) {document.getElementById("C_3").src="/static/Images/2.jpg";}
+if(document.getElementById("CajaIC3").value==3) {document.getElementById("C_3").src="/static/Images/3.jpg";}
+if(document.getElementById("CajaIC3").value==4) {document.getElementById("C_3").src="/static/Images/4.jpg";}
+if(document.getElementById("CajaIC3").value==5) {document.getElementById("C_3").src="/static/Images/5.jpg";}
+if(document.getElementById("CajaIC3").value==6) {document.getElementById("C_3").src="/static/Images/6.jpg";}
+if(document.getElementById("CajaIC3").value==7) {document.getElementById("C_3").src="/static/Images/7.jpg";}
+if(document.getElementById("CajaIC3").value==8) {document.getElementById("C_3").src="/static/Images/8.jpg";}
+if(document.getElementById("CajaIC3").value==9) {document.getElementById("C_3").src="/static/Images/9.jpg";}
+if(document.getElementById("CajaIC3").value==10){document.getElementById("C_3").src="/static/Images/10.jpg";}
+if(document.getElementById("CajaIC3").value==11){document.getElementById("C_3").src="/static/Images/11.jpg";}
+if(document.getElementById("CajaIC3").value==12){document.getElementById("C_3").src="/static/Images/12.jpg";}
+}if(document.getElementById("CajaC3").value!=3 && sel==2){document.getElementById("CajaC3").value=2;document.getElementById("C_3").onclick="";}
+if(document.getElementById("CajaC4").value==0){document.getElementById("C_4").onclick="";
+if(document.getElementById("CajaIC4").value==1) {document.getElementById("C_4").src="/static/Images/1.jpg";}
+if(document.getElementById("CajaIC4").value==2) {document.getElementById("C_4").src="/static/Images/2.jpg";}
+if(document.getElementById("CajaIC4").value==3) {document.getElementById("C_4").src="/static/Images/3.jpg";}
+if(document.getElementById("CajaIC4").value==4) {document.getElementById("C_4").src="/static/Images/4.jpg";}
+if(document.getElementById("CajaIC4").value==5) {document.getElementById("C_4").src="/static/Images/5.jpg";}
+if(document.getElementById("CajaIC4").value==6) {document.getElementById("C_4").src="/static/Images/6.jpg";}
+if(document.getElementById("CajaIC4").value==7) {document.getElementById("C_4").src="/static/Images/7.jpg";}
+if(document.getElementById("CajaIC4").value==8) {document.getElementById("C_4").src="/static/Images/8.jpg";}
+if(document.getElementById("CajaIC4").value==9) {document.getElementById("C_4").src="/static/Images/9.jpg";}
+if(document.getElementById("CajaIC4").value==10){document.getElementById("C_4").src="/static/Images/10.jpg";}
+if(document.getElementById("CajaIC4").value==11){document.getElementById("C_4").src="/static/Images/11.jpg";}
+if(document.getElementById("CajaIC4").value==12){document.getElementById("C_4").src="/static/Images/12.jpg";}
+}if(document.getElementById("CajaC4").value!=3 && sel==2){document.getElementById("CajaC4").value=2;document.getElementById("C_4").onclick="";}
+if(document.getElementById("CajaC5").value==0){document.getElementById("C_5").onclick="";
+if(document.getElementById("CajaIC5").value==1) {document.getElementById("C_5").src="/static/Images/1.jpg";}
+if(document.getElementById("CajaIC5").value==2) {document.getElementById("C_5").src="/static/Images/2.jpg";}
+if(document.getElementById("CajaIC5").value==3) {document.getElementById("C_5").src="/static/Images/3.jpg";}
+if(document.getElementById("CajaIC5").value==4) {document.getElementById("C_5").src="/static/Images/4.jpg";}
+if(document.getElementById("CajaIC5").value==5) {document.getElementById("C_5").src="/static/Images/5.jpg";}
+if(document.getElementById("CajaIC5").value==6) {document.getElementById("C_5").src="/static/Images/6.jpg";}
+if(document.getElementById("CajaIC5").value==7) {document.getElementById("C_5").src="/static/Images/7.jpg";}
+if(document.getElementById("CajaIC5").value==8) {document.getElementById("C_5").src="/static/Images/8.jpg";}
+if(document.getElementById("CajaIC5").value==9) {document.getElementById("C_5").src="/static/Images/9.jpg";}
+if(document.getElementById("CajaIC5").value==10){document.getElementById("C_5").src="/static/Images/10.jpg";}
+if(document.getElementById("CajaIC5").value==11){document.getElementById("C_5").src="/static/Images/11.jpg";}
+if(document.getElementById("CajaIC5").value==12){document.getElementById("C_5").src="/static/Images/12.jpg";}
+}if(document.getElementById("CajaC5").value!=3 && sel==2){document.getElementById("CajaC5").value=2;document.getElementById("C_5").onclick="";}
+if(document.getElementById("CajaC6").value==0){document.getElementById("C_6").onclick="";
+if(document.getElementById("CajaIC6").value==1) {document.getElementById("C_6").src="/static/Images/1.jpg";}
+if(document.getElementById("CajaIC6").value==2) {document.getElementById("C_6").src="/static/Images/2.jpg";}
+if(document.getElementById("CajaIC6").value==3) {document.getElementById("C_6").src="/static/Images/3.jpg";}
+if(document.getElementById("CajaIC6").value==4) {document.getElementById("C_6").src="/static/Images/4.jpg";}
+if(document.getElementById("CajaIC6").value==5) {document.getElementById("C_6").src="/static/Images/5.jpg";}
+if(document.getElementById("CajaIC6").value==6) {document.getElementById("C_6").src="/static/Images/6.jpg";}
+if(document.getElementById("CajaIC6").value==7) {document.getElementById("C_6").src="/static/Images/7.jpg";}
+if(document.getElementById("CajaIC6").value==8) {document.getElementById("C_6").src="/static/Images/8.jpg";}
+if(document.getElementById("CajaIC6").value==9) {document.getElementById("C_6").src="/static/Images/9.jpg";}
+if(document.getElementById("CajaIC6").value==10){document.getElementById("C_6").src="/static/Images/10.jpg";}
+if(document.getElementById("CajaIC6").value==11){document.getElementById("C_6").src="/static/Images/11.jpg";}
+if(document.getElementById("CajaIC6").value==12){document.getElementById("C_6").src="/static/Images/12.jpg";}
+}if(document.getElementById("CajaC6").value!=3 && sel==2){document.getElementById("CajaC6").value=2;document.getElementById("C_6").onclick="";}
+
+
+if(document.getElementById("CajaD1").value==0){document.getElementById("D_1").onclick="";
+if(document.getElementById("CajaID1").value==1) {document.getElementById("D_1").src="/static/Images/1.jpg";}
+if(document.getElementById("CajaID1").value==2) {document.getElementById("D_1").src="/static/Images/2.jpg";}
+if(document.getElementById("CajaID1").value==3) {document.getElementById("D_1").src="/static/Images/3.jpg";}
+if(document.getElementById("CajaID1").value==4) {document.getElementById("D_1").src="/static/Images/4.jpg";}
+if(document.getElementById("CajaID1").value==5) {document.getElementById("D_1").src="/static/Images/5.jpg";}
+if(document.getElementById("CajaID1").value==6) {document.getElementById("D_1").src="/static/Images/6.jpg";}
+if(document.getElementById("CajaID1").value==7) {document.getElementById("D_1").src="/static/Images/7.jpg";}
+if(document.getElementById("CajaID1").value==8) {document.getElementById("D_1").src="/static/Images/8.jpg";}
+if(document.getElementById("CajaID1").value==9) {document.getElementById("D_1").src="/static/Images/9.jpg";}
+if(document.getElementById("CajaID1").value==10){document.getElementById("D_1").src="/static/Images/10.jpg";}
+if(document.getElementById("CajaID1").value==11){document.getElementById("D_1").src="/static/Images/11.jpg";}
+if(document.getElementById("CajaID1").value==12){document.getElementById("D_1").src="/static/Images/12.jpg";}
+}if(document.getElementById("CajaD1").value!=3 && sel==2){document.getElementById("CajaD1").value=2;document.getElementById("D_1").onclick="";}
+if(document.getElementById("CajaD2").value==0){document.getElementById("D_2").onclick="";
+if(document.getElementById("CajaID2").value==1) {document.getElementById("D_2").src="/static/Images/1.jpg";}
+if(document.getElementById("CajaID2").value==2) {document.getElementById("D_2").src="/static/Images/2.jpg";}
+if(document.getElementById("CajaID2").value==3) {document.getElementById("D_2").src="/static/Images/3.jpg";}
+if(document.getElementById("CajaID2").value==4) {document.getElementById("D_2").src="/static/Images/4.jpg";}
+if(document.getElementById("CajaID2").value==5) {document.getElementById("D_2").src="/static/Images/5.jpg";}
+if(document.getElementById("CajaID2").value==6) {document.getElementById("D_2").src="/static/Images/6.jpg";}
+if(document.getElementById("CajaID2").value==7) {document.getElementById("D_2").src="/static/Images/7.jpg";}
+if(document.getElementById("CajaID2").value==8) {document.getElementById("D_2").src="/static/Images/8.jpg";}
+if(document.getElementById("CajaID2").value==9) {document.getElementById("D_2").src="/static/Images/9.jpg";}
+if(document.getElementById("CajaID2").value==10){document.getElementById("D_2").src="/static/Images/10.jpg";}
+if(document.getElementById("CajaID2").value==11){document.getElementById("D_2").src="/static/Images/11.jpg";}
+if(document.getElementById("CajaID2").value==12){document.getElementById("D_2").src="/static/Images/12.jpg";}
+}if(document.getElementById("CajaD2").value!=3 && sel==2){document.getElementById("CajaD2").value=2;document.getElementById("D_2").onclick="";}
+if(document.getElementById("CajaD3").value==0){document.getElementById("D_3").onclick="";
+if(document.getElementById("CajaID3").value==1) {document.getElementById("D_3").src="/static/Images/1.jpg";}
+if(document.getElementById("CajaID3").value==2) {document.getElementById("D_3").src="/static/Images/2.jpg";}
+if(document.getElementById("CajaID3").value==3) {document.getElementById("D_3").src="/static/Images/3.jpg";}
+if(document.getElementById("CajaID3").value==4) {document.getElementById("D_3").src="/static/Images/4.jpg";}
+if(document.getElementById("CajaID3").value==5) {document.getElementById("D_3").src="/static/Images/5.jpg";}
+if(document.getElementById("CajaID3").value==6) {document.getElementById("D_3").src="/static/Images/6.jpg";}
+if(document.getElementById("CajaID3").value==7) {document.getElementById("D_3").src="/static/Images/7.jpg";}
+if(document.getElementById("CajaID3").value==8) {document.getElementById("D_3").src="/static/Images/8.jpg";}
+if(document.getElementById("CajaID3").value==9) {document.getElementById("D_3").src="/static/Images/9.jpg";}
+if(document.getElementById("CajaID3").value==10){document.getElementById("D_3").src="/static/Images/10.jpg";}
+if(document.getElementById("CajaID3").value==11){document.getElementById("D_3").src="/static/Images/11.jpg";}
+if(document.getElementById("CajaID3").value==12){document.getElementById("D_3").src="/static/Images/12.jpg";}
+}if(document.getElementById("CajaD3").value!=3 && sel==2){document.getElementById("CajaD3").value=2;document.getElementById("D_3").onclick="";}
+if(document.getElementById("CajaD4").value==0){document.getElementById("D_4").onclick="";
+if(document.getElementById("CajaID4").value==1) {document.getElementById("D_4").src="/static/Images/1.jpg";}
+if(document.getElementById("CajaID4").value==2) {document.getElementById("D_4").src="/static/Images/2.jpg";}
+if(document.getElementById("CajaID4").value==3) {document.getElementById("D_4").src="/static/Images/3.jpg";}
+if(document.getElementById("CajaID4").value==4) {document.getElementById("D_4").src="/static/Images/4.jpg";}
+if(document.getElementById("CajaID4").value==5) {document.getElementById("D_4").src="/static/Images/5.jpg";}
+if(document.getElementById("CajaID4").value==6) {document.getElementById("D_4").src="/static/Images/6.jpg";}
+if(document.getElementById("CajaID4").value==7) {document.getElementById("D_4").src="/static/Images/7.jpg";}
+if(document.getElementById("CajaID4").value==8) {document.getElementById("D_4").src="/static/Images/8.jpg";}
+if(document.getElementById("CajaID4").value==9) {document.getElementById("D_4").src="/static/Images/9.jpg";}
+if(document.getElementById("CajaID4").value==10){document.getElementById("D_4").src="/static/Images/10.jpg";}
+if(document.getElementById("CajaID4").value==11){document.getElementById("D_4").src="/static/Images/11.jpg";}
+if(document.getElementById("CajaID4").value==12){document.getElementById("D_4").src="/static/Images/12.jpg";}
+}if(document.getElementById("CajaD4").value!=3 && sel==2){document.getElementById("CajaD4").value=2;document.getElementById("D_4").onclick="";}
+if(document.getElementById("CajaD5").value==0){document.getElementById("D_5").onclick="";
+if(document.getElementById("CajaID5").value==1) {document.getElementById("D_5").src="/static/Images/1.jpg";}
+if(document.getElementById("CajaID5").value==2) {document.getElementById("D_5").src="/static/Images/2.jpg";}
+if(document.getElementById("CajaID5").value==3) {document.getElementById("D_5").src="/static/Images/3.jpg";}
+if(document.getElementById("CajaID5").value==4) {document.getElementById("D_5").src="/static/Images/4.jpg";}
+if(document.getElementById("CajaID5").value==5) {document.getElementById("D_5").src="/static/Images/5.jpg";}
+if(document.getElementById("CajaID5").value==6) {document.getElementById("D_5").src="/static/Images/6.jpg";}
+if(document.getElementById("CajaID5").value==7) {document.getElementById("D_5").src="/static/Images/7.jpg";}
+if(document.getElementById("CajaID5").value==8) {document.getElementById("D_5").src="/static/Images/8.jpg";}
+if(document.getElementById("CajaID5").value==9) {document.getElementById("D_5").src="/static/Images/9.jpg";}
+if(document.getElementById("CajaID5").value==10){document.getElementById("D_5").src="/static/Images/10.jpg";}
+if(document.getElementById("CajaID5").value==11){document.getElementById("D_5").src="/static/Images/11.jpg";}
+if(document.getElementById("CajaID5").value==12){document.getElementById("D_5").src="/static/Images/12.jpg";}
+}if(document.getElementById("CajaD5").value!=3 && sel==2){document.getElementById("CajaD5").value=2;document.getElementById("D_5").onclick="";}
+if(document.getElementById("CajaD6").value==0){document.getElementById("D_6").onclick="";
+if(document.getElementById("CajaID6").value==1) {document.getElementById("D_6").src="/static/Images/1.jpg";}
+if(document.getElementById("CajaID6").value==2) {document.getElementById("D_6").src="/static/Images/2.jpg";}
+if(document.getElementById("CajaID6").value==3) {document.getElementById("D_6").src="/static/Images/3.jpg";}
+if(document.getElementById("CajaID6").value==4) {document.getElementById("D_6").src="/static/Images/4.jpg";}
+if(document.getElementById("CajaID6").value==5) {document.getElementById("D_6").src="/static/Images/5.jpg";}
+if(document.getElementById("CajaID6").value==6) {document.getElementById("D_6").src="/static/Images/6.jpg";}
+if(document.getElementById("CajaID6").value==7) {document.getElementById("D_6").src="/static/Images/7.jpg";}
+if(document.getElementById("CajaID6").value==8) {document.getElementById("D_6").src="/static/Images/8.jpg";}
+if(document.getElementById("CajaID6").value==9) {document.getElementById("D_6").src="/static/Images/9.jpg";}
+if(document.getElementById("CajaID6").value==10){document.getElementById("D_6").src="/static/Images/10.jpg";}
+if(document.getElementById("CajaID6").value==11){document.getElementById("D_6").src="/static/Images/11.jpg";}
+if(document.getElementById("CajaID6").value==12){document.getElementById("D_6").src="/static/Images/12.jpg";}
+}if(document.getElementById("CajaD6").value!=3 && sel==2){document.getElementById("CajaD6").value=2;document.getElementById("D_6").onclick="";}
+
+}
+if(sel==2){setInterval(r,1000);
+
+if(document.getElementById("Carta1").value==document.getElementById("Carta2").value){
+document.getElementById("P2").value=parseInt(document.getElementById("P2").value)+1;
+document.getElementById("IGUAL").value=1;
+if(document.getElementById("CajaIA1").value==document.getElementById("Carta1").value){document.getElementById("CajaA1").value=3;}
+if(document.getElementById("CajaIA2").value==document.getElementById("Carta1").value){document.getElementById("CajaA2").value=3;}
+if(document.getElementById("CajaIA3").value==document.getElementById("Carta1").value){document.getElementById("CajaA3").value=3;}
+if(document.getElementById("CajaIA4").value==document.getElementById("Carta1").value){document.getElementById("CajaA4").value=3;}
+if(document.getElementById("CajaIA5").value==document.getElementById("Carta1").value){document.getElementById("CajaA5").value=3;}
+if(document.getElementById("CajaIA6").value==document.getElementById("Carta1").value){document.getElementById("CajaA6").value=3;}
+
+if(document.getElementById("CajaIB1").value==document.getElementById("Carta1").value){document.getElementById("CajaB1").value=3;}
+if(document.getElementById("CajaIB2").value==document.getElementById("Carta1").value){document.getElementById("CajaB2").value=3;}
+if(document.getElementById("CajaIB3").value==document.getElementById("Carta1").value){document.getElementById("CajaB3").value=3;}
+if(document.getElementById("CajaIB4").value==document.getElementById("Carta1").value){document.getElementById("CajaB4").value=3;}
+if(document.getElementById("CajaIB5").value==document.getElementById("Carta1").value){document.getElementById("CajaB5").value=3;}
+if(document.getElementById("CajaIB6").value==document.getElementById("Carta1").value){document.getElementById("CajaB6").value=3;}
+
+if(document.getElementById("CajaIC1").value==document.getElementById("Carta1").value){document.getElementById("CajaC1").value=3;}
+if(document.getElementById("CajaIC2").value==document.getElementById("Carta1").value){document.getElementById("CajaC2").value=3;}
+if(document.getElementById("CajaIC3").value==document.getElementById("Carta1").value){document.getElementById("CajaC3").value=3;}
+if(document.getElementById("CajaIC4").value==document.getElementById("Carta1").value){document.getElementById("CajaC4").value=3;}
+if(document.getElementById("CajaIC5").value==document.getElementById("Carta1").value){document.getElementById("CajaC5").value=3;}
+if(document.getElementById("CajaIC6").value==document.getElementById("Carta1").value){document.getElementById("CajaC6").value=3;}
+
+if(document.getElementById("CajaID1").value==document.getElementById("Carta1").value){document.getElementById("CajaD1").value=3;}
+if(document.getElementById("CajaID2").value==document.getElementById("Carta1").value){document.getElementById("CajaD2").value=3;}
+if(document.getElementById("CajaID3").value==document.getElementById("Carta1").value){document.getElementById("CajaD3").value=3;}
+if(document.getElementById("CajaID4").value==document.getElementById("Carta1").value){document.getElementById("CajaD4").value=3;}
+if(document.getElementById("CajaID5").value==document.getElementById("Carta1").value){document.getElementById("CajaD5").value=3;}
+if(document.getElementById("CajaID6").value==document.getElementById("Carta1").value){document.getElementById("CajaD6").value=3;}
+}else{document.getElementById("IGUAL").value=0;}
+
+document.getElementById("Carta1").value="ninguna1";
+document.getElementById("Carta2").value="ninguna2";
+
+
+}else{setInterval(recarga,700);}}
+
+function recarga(){document.getElementById("send").submit()}
+
+function A_1() {document.getElementById("CajaA1").value=0;sel++;document.getElementById("SEL").value=sel;
+if(sel==1){document.getElementById("Carta1").value={{IA1}};}
+if(sel==2){document.getElementById("Carta2").value={{IA1}};}
+document.getElementById("send").submit();}
+function A_2() {document.getElementById("CajaA2").value=0;sel++;document.getElementById("SEL").value=sel;
+if(sel==1){document.getElementById("Carta1").value={{IA2}};}
+if(sel==2){document.getElementById("Carta2").value={{IA2}};}
+document.getElementById("send").submit();}
+function A_3() {document.getElementById("CajaA3").value=0;sel++;document.getElementById("SEL").value=sel;
+if(sel==1){document.getElementById("Carta1").value={{IA3}};}
+if(sel==2){document.getElementById("Carta2").value={{IA3}};}
+document.getElementById("send").submit();}
+function A_4() {document.getElementById("CajaA4").value=0;sel++;document.getElementById("SEL").value=sel;
+if(sel==1){document.getElementById("Carta1").value={{IA4}};}
+if(sel==2){document.getElementById("Carta2").value={{IA4}};}
+document.getElementById("send").submit();}
+function A_5() {document.getElementById("CajaA5").value=0;sel++;document.getElementById("SEL").value=sel;
+if(sel==1){document.getElementById("Carta1").value={{IA5}};}
+if(sel==2){document.getElementById("Carta2").value={{IA5}};}
+document.getElementById("send").submit();}
+function A_6() {document.getElementById("CajaA6").value=0;sel++;document.getElementById("SEL").value=sel;
+if(sel==1){document.getElementById("Carta1").value={{IA6}};}
+if(sel==2){document.getElementById("Carta2").value={{IA6}};}
+document.getElementById("send").submit();}
+
+function B_1() {document.getElementById("CajaB1").value=0;sel++;document.getElementById("SEL").value=sel;
+if(sel==1){document.getElementById("Carta1").value={{IB1}};}
+if(sel==2){document.getElementById("Carta2").value={{IB1}};}
+document.getElementById("send").submit();}
+function B_2() {document.getElementById("CajaB2").value=0;sel++;document.getElementById("SEL").value=sel;
+if(sel==1){document.getElementById("Carta1").value={{IB2}};}
+if(sel==2){document.getElementById("Carta2").value={{IB2}};}
+document.getElementById("send").submit();}
+function B_3() {document.getElementById("CajaB3").value=0;sel++;document.getElementById("SEL").value=sel;
+if(sel==1){document.getElementById("Carta1").value={{IB3}};}
+if(sel==2){document.getElementById("Carta2").value={{IB3}};}
+document.getElementById("send").submit();}
+function B_4() {document.getElementById("CajaB4").value=0;sel++;document.getElementById("SEL").value=sel;
+if(sel==1){document.getElementById("Carta1").value={{IB4}};}
+if(sel==2){document.getElementById("Carta2").value={{IB4}};}
+document.getElementById("send").submit();}
+function B_5() {document.getElementById("CajaB5").value=0;sel++;document.getElementById("SEL").value=sel;
+if(sel==1){document.getElementById("Carta1").value={{IB5}};}
+if(sel==2){document.getElementById("Carta2").value={{IB5}};}
+document.getElementById("send").submit();}
+function B_6() {document.getElementById("CajaB6").value=0;sel++;document.getElementById("SEL").value=sel;
+if(sel==1){document.getElementById("Carta1").value={{IB6}};}
+if(sel==2){document.getElementById("Carta2").value={{IB6}};}
+document.getElementById("send").submit();}
+
+function C_1() {document.getElementById("CajaC1").value=0;sel++;document.getElementById("SEL").value=sel;
+if(sel==1){document.getElementById("Carta1").value={{IC1}};}
+if(sel==2){document.getElementById("Carta2").value={{IC1}};}
+document.getElementById("send").submit();}
+function C_2() {document.getElementById("CajaC2").value=0;sel++;document.getElementById("SEL").value=sel;
+if(sel==1){document.getElementById("Carta1").value={{IC2}};}
+if(sel==2){document.getElementById("Carta2").value={{IC2}};}
+document.getElementById("send").submit();}
+function C_3() {document.getElementById("CajaC3").value=0;sel++;document.getElementById("SEL").value=sel;
+if(sel==1){document.getElementById("Carta1").value={{IC3}};}
+if(sel==2){document.getElementById("Carta2").value={{IC3}};}
+document.getElementById("send").submit();}
+function C_4() {document.getElementById("CajaC4").value=0;sel++;document.getElementById("SEL").value=sel;
+if(sel==1){document.getElementById("Carta1").value={{IC4}};}
+if(sel==2){document.getElementById("Carta2").value={{IC4}};}
+document.getElementById("send").submit();}
+function C_5() {document.getElementById("CajaC5").value=0;sel++;document.getElementById("SEL").value=sel;
+if(sel==1){document.getElementById("Carta1").value={{IC5}};}
+if(sel==2){document.getElementById("Carta2").value={{IC5}};}
+document.getElementById("send").submit();}
+function C_6() {document.getElementById("CajaC6").value=0;sel++;document.getElementById("SEL").value=sel;
+if(sel==1){document.getElementById("Carta1").value={{IC6}};}
+if(sel==2){document.getElementById("Carta2").value={{IC6}};}
+document.getElementById("send").submit();}
+
+function D_1() {document.getElementById("CajaD1").value=0;sel++;document.getElementById("SEL").value=sel;
+if(sel==1){document.getElementById("Carta1").value={{ID1}};}
+if(sel==2){document.getElementById("Carta2").value={{ID1}};}
+document.getElementById("send").submit();}
+function D_2() {document.getElementById("CajaD2").value=0;sel++;document.getElementById("SEL").value=sel;
+if(sel==1){document.getElementById("Carta1").value={{ID2}};}
+if(sel==2){document.getElementById("Carta2").value={{ID2}};}
+document.getElementById("send").submit();}
+function D_3() {document.getElementById("CajaD3").value=0;sel++;document.getElementById("SEL").value=sel;
+if(sel==1){document.getElementById("Carta1").value={{ID3}};}
+if(sel==2){document.getElementById("Carta2").value={{ID3}};}
+document.getElementById("send").submit();}
+function D_4() {document.getElementById("CajaD4").value=0;sel++;document.getElementById("SEL").value=sel;
+if(sel==1){document.getElementById("Carta1").value={{ID4}};}
+if(sel==2){document.getElementById("Carta2").value={{ID4}};}
+document.getElementById("send").submit();}
+function D_5() {document.getElementById("CajaD5").value=0;sel++;document.getElementById("SEL").value=sel;
+if(sel==1){document.getElementById("Carta1").value={{ID5}};}
+if(sel==2){document.getElementById("Carta2").value={{ID5}};}
+document.getElementById("send").submit();}
+function D_6() {document.getElementById("CajaD6").value=0;sel++;document.getElementById("SEL").value=sel;
+if(sel==1){document.getElementById("Carta1").value={{ID6}};}
+if(sel==2){document.getElementById("Carta2").value={{ID6}};}
+document.getElementById("send").submit();}
+
+  
+</script>
+
+
+</form>
+<!----------------------------------------------------------------------------------------------------------------------------------->
+</body>
+<!----------------------------------------------------------------------------------------------------------------------------------->
+</html>
+<!----------------------------------------------------------------------------------------------------------------------------------->

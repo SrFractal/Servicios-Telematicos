@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="/css/styles.css">
+   <title>Memoria</title>
+</head>
+
+
+
+<body>
+
+<audio id="menu"><source src="/audio/menu.mp3" type="audio/mp3"></audio>
+<audio id="ok"><source src="/audio/ok.ogg" type="audio/ogg"></audio>
+
+<div class="inicio">
+
+   <div class="imagen"><img class="img" src="/img/Inicio.png" alt="Inicio..."></div>
+
+   <!--div class="caja">
+      <div class="imagen"><img class="img" src="/img/Reverso.jpg" alt="Añadir producto..."></div>
+   </div-->
+</div>
+
+<div class="menu">
+<div class="boton" onclick="un_jugador()" onmouseover="menu()">Un jugador</div>
+<div class="boton" onclick="multijugador()" onmouseover="menu()">Multijugador</div>
+<div class="boton" onclick="instrucciones()"  onmouseover="menu()">Instrucciones</div>
+</div>
+</body>
+
+<script>
+   function menu(){
+         document.getElementById("menu").currentTime = 0; document.getElementById("menu").play();
+      }
+   function un_jugador(){
+      document.getElementById("ok").currentTime = 0; document.getElementById("ok").play();
+      setTimeout(function () {location.href='/1-player';}, 800);
+   }
+   function multijugador(){
+      document.getElementById("ok").currentTime = 0; document.getElementById("ok").play();
+      setTimeout(function () {location.href='/multiplayer';}, 800);
+   }
+   function instrucciones(){
+      document.getElementById("ok").currentTime = 0; document.getElementById("ok").play();
+      setTimeout(function () {location.href='/';}, 800);
+   }
+
+</script>
+
+</html>
